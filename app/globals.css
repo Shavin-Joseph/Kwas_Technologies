@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --ink: #f8f9f6;
+    --fg: #121814;
+    --panel: rgba(236, 240, 236, 0.9);
+    --panel2: rgba(230, 235, 230, 0.96);
+    --line: rgba(18, 24, 20, 0.14);
+    --faint: #6e7a71;
+    --muted: #48544b;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --ink: #0d120f;
+    --fg: #edefea;
+    --panel: rgba(23, 31, 25, 0.62);
+    --panel2: rgba(23, 31, 25, 0.72);
+    --line: rgba(237, 239, 234, 0.12);
+    --faint: #5c665d;
+    --muted: #9ba399;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-fg antialiased;
+}
+
+::selection {
+  background: theme("colors.amber");
+  color: theme("colors.ink");
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: theme("colors.ink");
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.line");
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.amberDim");
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.amber");
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Faint blueprint grid, masked to fade toward the edges */
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(18, 24, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(18, 24, 20, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.dark .bg-grid {
+  background-image: linear-gradient(to right, rgba(237, 239, 234, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 239, 234, 0.035) 1px, transparent 1px);
+}
+
+.glass {
+  background: var(--panel);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Animations preserved exactly as they are */
+.trace-dot {
+  animation-name: trace-flow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  offset-rotate: 0deg;
+}
+
+@keyframes trace-flow {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .trace-dot {
+    animation: none;
+    opacity: 0.5;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
