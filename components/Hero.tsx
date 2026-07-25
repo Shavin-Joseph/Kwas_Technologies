@@ -49,7 +49,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p variants={item} className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-            KWAS — Key Web App Solutions — builds practical software for teams that want
+            Kwas Technologies — Key Web App Solutions Technologies — builds practical software for teams that want
             reliable products, plain pricing, and no unnecessary friction. No
             ads. No trackers. No accounts you didn&apos;t ask for.
           </motion.p>

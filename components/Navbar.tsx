@@ -21,7 +21,7 @@ export function Navbar() {
         <a href="#top" className="flex items-center gap-2.5">
           <Logo />
           <span className="font-display text-lg font-semibold tracking-tight text-fg">
-            KWAS
+            Kwas Technologies
           </span>
         </a>
 
@@ -116,7 +116,7 @@ function Logo() {
   return (
     <Image
       src="/icon.png?v=2"
-      alt="KWAS logo"
+      alt="Kwas Technologies logo"
       width={28}
       height={28}
       className="rounded-md object-cover"

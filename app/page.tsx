@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy-First Android Apps & Developer Tools",
   description:
-    "Explore KWAS Android launchers, terminal tools, password vaults, developer kits, and self-hosted sync utilities built for real-world workflows.",
+    "Explore Kwas Technologies Android launchers, terminal tools, password vaults, developer kits, and self-hosted sync utilities built for real-world workflows.",
   alternates: {
     canonical: "/",
   },
@@ -21,23 +21,23 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "KWAS",
+    name: "Kwas Technologies",
     url: "https://kwas.tech",
     logo: "https://kwas.tech/icon.png",
     description:
-      "KWAS develops privacy-first Android apps, developer tools, and self-hosted software for modern teams and independent creators.",
+      "Kwas Technologies develops privacy-first Android apps, developer tools, and self-hosted software for modern teams and independent creators.",
     sameAs: ["https://github.com/kwas-tech"],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "KWAS",
+    name: "Kwas Technologies",
     url: "https://kwas.tech",
     description:
       "A software distribution site for privacy-first Android apps and developer workflows.",
     publisher: {
       "@type": "Organization",
-      name: "KWAS",
+      name: "Kwas Technologies",
     },
   },
 ];

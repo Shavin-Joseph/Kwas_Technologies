@@ -31,9 +31,9 @@ export function Philosophy() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
       <SectionHeader
-        eyebrow="Why KWAS"
+        eyebrow="Why Kwas Technologies"
         title="Built the way we'd want to use it."
-        copy="KWAS started as a handful of tools we built for ourselves because the existing options were slow, ad-supported, or both. The same rules still apply to everything we ship."
+        copy="Kwas Technologies started as a handful of tools we built for ourselves because the existing options were slow, ad-supported, or both. The same rules still apply to everything we ship."
       />
 
       <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2">

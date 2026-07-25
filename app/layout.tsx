@@ -15,18 +15,19 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weigh
 export const metadata: Metadata = {
   metadataBase: new URL("https://kwas.tech"),
   title: {
-    default: "KWAS — Privacy-First Android Apps & Developer Tools",
-    template: "%s | KWAS",
+    default: "Kwas Technologies — Privacy-First Android Apps & Developer Tools",
+    template: "%s | Kwas Technologies",
   },
   description:
-    "KWAS builds privacy-first Android apps, developer tooling, and self-hosted software for modern teams and independent creators.",
-  applicationName: "KWAS",
-  authors: [{ name: "KWAS" }],
-  creator: "KWAS",
-  publisher: "KWAS",
+    "Kwas Technologies (Key Web App Solutions Technologies) builds privacy-first Android apps, developer tooling, and self-hosted software for modern teams and independent creators.",
+  applicationName: "Kwas Technologies",
+  authors: [{ name: "Kwas Technologies" }],
+  creator: "Kwas Technologies",
+  publisher: "Kwas Technologies",
   category: "technology",
   keywords: [
-    "KWAS",
+    "Kwas Technologies",
+    "Key Web App Solutions Technologies",
     "Android apps",
     "privacy-first software",
     "developer tools",
@@ -45,11 +46,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "KWAS — Privacy-First Android Apps & Developer Tools",
+    title: "Kwas Technologies — Privacy-First Android Apps & Developer Tools",
     description:
       "Supportive software for the modern stack: Android launchers, terminals, password management, and self-hosted productivity tools.",
     url: "https://kwas.tech",
-    siteName: "KWAS",
+    siteName: "Kwas Technologies",
     locale: "en_US",
     type: "website",
     images: [
@@ -63,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KWAS — Privacy-First Android Apps & Developer Tools",
+    title: "Kwas Technologies — Privacy-First Android Apps & Developer Tools",
     description:
-      "Discover KWAS apps and tools designed for device ownership, independent workflows, and practical productivity.",
+      "Discover Kwas Technologies apps and tools designed for device ownership, independent workflows, and practical productivity.",
     images: ["/icon.png"],
   },
   icons: {

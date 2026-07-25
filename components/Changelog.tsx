@@ -16,7 +16,7 @@ export function Changelog() {
       <SectionHeader
         eyebrow="Build log"
         title="What shipped recently."
-        copy="A running log of releases across every KWAS project. Wire this up to the GitHub Releases API if you'd rather it update itself — see the README."
+        copy="A running log of releases across every Kwas Technologies project. Wire this up to the GitHub Releases API if you'd rather it update itself — see the README."
       />
 
       <div className="relative mt-14 max-w-2xl">

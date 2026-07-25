@@ -35,10 +35,10 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-1">
             <span className="font-display text-lg font-semibold text-fg">
-              KWAS
+              Kwas Technologies
             </span>
             <p className="mt-3 max-w-[220px] text-sm leading-relaxed text-faint">
-              Key Web App Solutions — practical software for modern teams.
+              Key Web App Solutions Technologies — practical software for modern teams.
             </p>
             <div className="mt-5 flex gap-3">
               <a
@@ -86,7 +86,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line/70 pt-6 font-mono text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} KWAS.tech — all rights reserved.</span>
+          <span>© {new Date().getFullYear()} Kwas Technologies — all rights reserved.</span>
           <span>Built with Next.js · deployed on Vercel</span>
         </div>
       </div>
