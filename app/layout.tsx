@@ -13,9 +13,61 @@ const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "KWAS — Key Web App Solutions",
-  description: "KWAS (Key Web App Solutions) builds practical software for modern teams.",
+  metadataBase: new URL("https://kwas.tech"),
+  title: {
+    default: "KWAS — Privacy-First Android Apps & Developer Tools",
+    template: "%s | KWAS",
+  },
+  description:
+    "KWAS builds privacy-first Android apps, developer tooling, and self-hosted software for modern teams and independent creators.",
   applicationName: "KWAS",
+  authors: [{ name: "KWAS" }],
+  creator: "KWAS",
+  publisher: "KWAS",
+  category: "technology",
+  keywords: [
+    "KWAS",
+    "Android apps",
+    "privacy-first software",
+    "developer tools",
+    "self-hosted software",
+    "open source",
+    "mobile app launcher",
+    "terminal emulator",
+    "password manager",
+    "file sync",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "KWAS — Privacy-First Android Apps & Developer Tools",
+    description:
+      "Supportive software for the modern stack: Android launchers, terminals, password management, and self-hosted productivity tools.",
+    url: "https://kwas.tech",
+    siteName: "KWAS",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "KWAS logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KWAS — Privacy-First Android Apps & Developer Tools",
+    description:
+      "Discover KWAS apps and tools designed for device ownership, independent workflows, and practical productivity.",
+    images: ["/icon.png"],
+  },
   icons: {
     icon: "/favicon.svg?v=3",
     apple: "/favicon.svg?v=3",

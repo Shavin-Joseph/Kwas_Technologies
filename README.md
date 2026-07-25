@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # KWAS.tech
 
 A free/open-source + commercial Android & software distribution site, built with Next.js 14 (App Router), TypeScript, Tailwind CSS, and Framer Motion. Designed to deploy straight to Vercel from GitHub.
@@ -128,3 +129,6 @@ A couple of things worth knowing so you don't over-provision:
 ---
 
 Built with Next.js · Tailwind CSS · Framer Motion
+=======
+# Kwas_Launcher
+>>>>>>> 2b10afaf476192013b76dc37b860078934514598
