@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { CircuitTraces } from "@/components/CircuitTraces";
 
 export function CTA() {
@@ -18,29 +19,26 @@ export function CTA() {
           <CircuitTraces variant="hero" />
         </div>
         <h2 className="font-display text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-          Ship something today.
+          Build &amp; Ship With KWAS Technologies.
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base text-muted">
-          Grab an app, read the source, or open an issue. Everything here is
-          built in the open.
+          Explore our privacy-first apps or get in touch for custom Web App Solutions at info@kwas.tech.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#products"
+          <Link
+            href="/products"
             className="group flex items-center gap-2 rounded-lg bg-amber px-5 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
           >
-            Browse the apps
+            Explore All Products
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href="https://github.com/kwas-tech"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-fg transition-colors hover:border-faint"
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-fg transition-colors hover:border-faint hover:text-amber"
           >
-            <Github size={16} />
-            Star on GitHub
-          </a>
+            <Mail size={16} />
+            Contact KWAS Tech
+          </Link>
         </div>
       </motion.div>
     </section>

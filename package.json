@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/analytics": "^0.10.22",
+    "@firebase/app": "^0.15.1",
+    "@firebase/firestore": "^4.16.0",
     "clsx": "^2.1.1",
+    "firebase": "^12.16.0",
     "framer-motion": "^11.3.19",
     "lucide-react": "^0.408.0",
     "next": "14.2.5",

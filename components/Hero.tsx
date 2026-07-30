@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Github } from "lucide-react";
 import { CircuitTraces } from "@/components/CircuitTraces";
@@ -68,19 +69,19 @@ export function Hero() {
           </motion.div>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#products"
+            <Link
+              href="/products"
               className="group flex items-center gap-2 rounded-lg bg-amber px-5 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
             >
               Explore Products
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
-            </a>
-            <a
-              href="#topics"
+            </Link>
+            <Link
+              href="/topics"
               className="flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-fg transition-colors hover:border-faint hover:text-amber"
             >
               Browse Topics
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-faint">

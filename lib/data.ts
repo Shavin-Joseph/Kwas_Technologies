@@ -8,15 +8,9 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-/**
- * ────────────────────────────────────────────────────────────────
- *  EDIT ME: this is the only file you need to touch to list your
- *  real apps. Everything on the Products grid is generated from
- *  this array — replace the placeholders below with your own.
- * ────────────────────────────────────────────────────────────────
- */
-export type License = "Free" | "Free + Commercial";
-export type Status = "Stable" | "Beta" | "Preview";
+export type License = "Free" | "Free + Open Source" | "Free + Commercial";
+export type Status = "In Development" | "Beta" | "Stable";
+export type Category = "Key Web Apps" | "Android Apps" | "Privacy & Security" | "Developer Tools";
 
 export interface AppItem {
   slug: string;
@@ -25,97 +19,183 @@ export interface AppItem {
   description: string;
   version: string;
   status: Status;
+  category: Category;
   icon: LucideIcon;
   platforms: string[];
   license: License;
   downloadUrl: string;
   sourceUrl: string;
+  rating: number;
+  downloads: number;
+  size: string;
+  isReleased: boolean;
+  featured?: boolean;
+  features: string[];
+  releaseNotes: string;
 }
 
 export const apps: AppItem[] = [
   {
     slug: "kwas-launcher",
     name: "Kwas Launcher",
-    tagline: "A home screen that gets out of your way",
+    tagline: "A home screen launcher engineered for Android",
     description:
-      "A fast, gesture-driven Android launcher with no ads and no telemetry. Icon packs, grid control, and a searchable app drawer.",
-    version: "v2.4.1",
-    status: "Stable",
+      "A fast, gesture-driven Android launcher with no ads and zero telemetry. Custom icon packs, grid control, and instant app drawer search.",
+    version: "v0.1.0-dev",
+    status: "In Development",
+    category: "Android Apps",
     icon: Smartphone,
-    platforms: ["Android"],
-    license: "Free + Commercial",
-    downloadUrl: "#",
+    platforms: ["Android 8.0+"],
+    license: "Free + Open Source",
+    downloadUrl: "https://github.com/kwas-tech",
     sourceUrl: "https://github.com/kwas-tech",
-  },
-  {
-    slug: "kwas-terminal",
-    name: "Kwas Terminal",
-    tagline: "A pocket shell for Android",
-    description:
-      "A native terminal emulator with tmux-style panes, SSH profiles, and a package manager for common CLI tools.",
-    version: "v1.9.0",
-    status: "Stable",
-    icon: Terminal,
-    platforms: ["Android"],
-    license: "Free",
-    downloadUrl: "#",
-    sourceUrl: "https://github.com/kwas-tech",
+    rating: 5.0,
+    downloads: 0,
+    size: "TBA (In Development)",
+    isReleased: false,
+    featured: true,
+    features: [
+      "Zero telemetry & offline gesture engine",
+      "Custom icon pack & font engine",
+      "Sub-millisecond fuzzy app drawer search",
+      "Ultra-low RAM & CPU footprint",
+    ],
+    releaseNotes: "Currently in active pre-release development cycle. Code hosted on GitHub.",
   },
   {
     slug: "kwas-vault",
     name: "Kwas Vault",
-    tagline: "Offline-first password manager",
+    tagline: "Offline-first encrypted credential vault",
     description:
-      "Encrypted, local-first credential storage with biometric unlock and an optional self-hosted sync server.",
-    version: "v3.1.2",
-    status: "Stable",
+      "AES-256 encrypted credential storage with biometric unlock, zero-knowledge sync, and zero cloud lock-in.",
+    version: "v0.1.0-dev",
+    status: "In Development",
+    category: "Privacy & Security",
     icon: ShieldCheck,
-    platforms: ["Android", "Desktop"],
-    license: "Free + Commercial",
-    downloadUrl: "#",
+    platforms: ["Android", "Web App", "Desktop"],
+    license: "Free + Open Source",
+    downloadUrl: "https://github.com/kwas-tech",
     sourceUrl: "https://github.com/kwas-tech",
+    rating: 5.0,
+    downloads: 0,
+    size: "TBA (In Development)",
+    isReleased: false,
+    featured: true,
+    features: [
+      "AES-256-GCM hardware key encryption",
+      "Biometric fingerprint & face unlock",
+      "Optional self-hosted sync server",
+      "Zero trackers & offline fallback",
+    ],
+    releaseNotes: "Initial code architecture in progress. Pre-release binaries coming soon.",
+  },
+  {
+    slug: "kwas-terminal",
+    name: "Kwas Terminal",
+    tagline: "A pocket terminal shell for Android & Web",
+    description:
+      "Native terminal emulator featuring tmux-style pane splitting, SSH profile storage, and a package manager for common CLI utilities.",
+    version: "v0.1.0-dev",
+    status: "In Development",
+    category: "Developer Tools",
+    icon: Terminal,
+    platforms: ["Android", "Web CLI"],
+    license: "Free + Open Source",
+    downloadUrl: "https://github.com/kwas-tech",
+    sourceUrl: "https://github.com/kwas-tech",
+    rating: 5.0,
+    downloads: 0,
+    size: "TBA (In Development)",
+    isReleased: false,
+    featured: false,
+    features: [
+      "Split-screen terminal panes (tmux compatible)",
+      "Saved SSH key profiles & auto-reconnect",
+      "Custom color schemes & powerline fonts",
+      "Built-in CLI utility toolchain",
+    ],
+    releaseNotes: "In active development. Terminal interface & engine being built.",
   },
   {
     slug: "kwas-sync",
     name: "Kwas Sync",
-    tagline: "Self-hosted file sync",
+    tagline: "Self-hosted point-to-point file sync",
     description:
-      "Point-to-point file sync between your own devices and servers. No third-party cloud in the loop, ever.",
-    version: "v1.2.0",
-    status: "Beta",
+      "Direct encrypted file sync between your personal mobile devices, laptops, and local servers without a middleman cloud.",
+    version: "v0.1.0-dev",
+    status: "In Development",
+    category: "Key Web Apps",
     icon: RadioTower,
-    platforms: ["Android", "Desktop"],
-    license: "Free",
-    downloadUrl: "#",
+    platforms: ["Android", "Web App", "Linux/Docker"],
+    license: "Free + Open Source",
+    downloadUrl: "https://github.com/kwas-tech",
     sourceUrl: "https://github.com/kwas-tech",
+    rating: 5.0,
+    downloads: 0,
+    size: "TBA (In Development)",
+    isReleased: false,
+    featured: false,
+    features: [
+      "Direct TLS 1.3 point-to-point data transfer",
+      "Automated camera roll & folder backup",
+      "Docker container for home server deployment",
+      "Zero central cloud server dependencies",
+    ],
+    releaseNotes: "Relay & protocol specs under active pre-release development.",
   },
   {
     slug: "kwas-widgets",
     name: "Kwas Widgets",
-    tagline: "A widget kit that doesn't phone home",
+    tagline: "Modular home-screen widget kit",
     description:
-      "Fifteen configurable home-screen widgets — clock, weather, notes, habit tracker — built as one lightweight package.",
-    version: "v1.0.4",
-    status: "Stable",
+      "Fifteen modular home-screen widgets — clock, weather radar, note cards, habit tracker — built in a single lightweight package.",
+    version: "v0.1.0-dev",
+    status: "In Development",
+    category: "Android Apps",
     icon: Layers,
-    platforms: ["Android"],
-    license: "Free",
-    downloadUrl: "#",
+    platforms: ["Android 12+"],
+    license: "Free + Open Source",
+    downloadUrl: "https://github.com/kwas-tech",
     sourceUrl: "https://github.com/kwas-tech",
+    rating: 5.0,
+    downloads: 0,
+    size: "TBA (In Development)",
+    isReleased: false,
+    featured: false,
+    features: [
+      "Material You dynamic color integration",
+      "Zero location tracking or data collection",
+      "Battery-optimized background refresh",
+      "15 customizable layout templates",
+    ],
+    releaseNotes: "Widget layouts and Material You tinting currently being built.",
   },
   {
     slug: "kwas-devkit",
     name: "Kwas DevKit",
-    tagline: "CLI scaffolding for indie devs",
+    tagline: "CLI toolchain for indie developers",
     description:
-      "A command-line toolchain for scaffolding, signing, and shipping Android builds without touching Android Studio.",
-    version: "v0.8.0",
-    status: "Preview",
+      "Command-line developer toolchain for scaffolding, building, signing, and distributing web & mobile app packages automatically.",
+    version: "v0.1.0-dev",
+    status: "In Development",
+    category: "Developer Tools",
     icon: Puzzle,
-    platforms: ["Desktop"],
-    license: "Free + Commercial",
-    downloadUrl: "#",
+    platforms: ["CLI", "Windows", "macOS", "Linux"],
+    license: "Free + Open Source",
+    downloadUrl: "https://github.com/kwas-tech",
     sourceUrl: "https://github.com/kwas-tech",
+    rating: 5.0,
+    downloads: 0,
+    size: "TBA (In Development)",
+    isReleased: false,
+    featured: false,
+    features: [
+      "One-command Next.js & Android app scaffolding",
+      "Automated keystore signing & release builds",
+      "Built-in bundle optimizer & linter",
+      "Cross-platform binary compilation",
+    ],
+    releaseNotes: "CLI toolchain specifications in progress.",
   },
 ];
 
@@ -129,38 +209,10 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
-    version: "v2.4.1",
+    version: "v0.1.0-dev",
     date: "Jul 2026",
-    title: "Kwas Launcher — icon pack engine",
-    description: "Third-party icon pack support and a rebuilt search index for the app drawer.",
-    type: "Release",
-  },
-  {
-    version: "v3.1.2",
-    date: "Jul 2026",
-    title: "Kwas Vault — biometric unlock",
-    description: "Fingerprint and face unlock on supported devices, plus a faster cold start.",
+    title: "KWAS Technologies — Active Development Phase",
+    description: "Initial repository setup and open source architecture development for KWAS software suite.",
     type: "Feature",
-  },
-  {
-    version: "v1.2.0",
-    date: "Jun 2026",
-    title: "Kwas Sync enters beta",
-    description: "Point-to-point sync is now open for testing, with a self-hosted relay option.",
-    type: "Release",
-  },
-  {
-    version: "v1.9.0",
-    date: "May 2026",
-    title: "Kwas Terminal — SSH profiles",
-    description: "Saved SSH profiles with key-based auth and a persistent session picker.",
-    type: "Feature",
-  },
-  {
-    version: "v2.4.0",
-    date: "May 2026",
-    title: "Kwas Launcher — memory leak fix",
-    description: "Resolved a memory leak triggered by rapid workspace switching.",
-    type: "Fix",
   },
 ];

@@ -102,6 +102,7 @@ export const metadata: Metadata = {
     icon: "/favicon.svg?v=3",
     apple: "/favicon.svg?v=3",
   },
+  manifest: "/manifest.json",
   other: {
     "brand-name": "KWAS Technologies",
     "brand-fullname": "Key Web App Solutions Technologies",

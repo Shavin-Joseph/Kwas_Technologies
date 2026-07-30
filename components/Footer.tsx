@@ -1,31 +1,32 @@
-import { Github, Mail, Twitter } from "lucide-react";
+import Link from "next/link";
+import { Github, Mail } from "lucide-react";
 
 const COLUMNS = [
   {
     title: "Solutions & Topics",
     links: [
-      { label: "Key Web App Solutions", href: "#topics" },
-      { label: "Android Apps & Tools", href: "#topics" },
-      { label: "Privacy & Security", href: "#topics" },
-      { label: "Self-Hosted Infrastructure", href: "#topics" },
+      { label: "Key Web App Solutions", href: "/topics/web-apps" },
+      { label: "Android Apps & Tools", href: "/topics/mobile-apps" },
+      { label: "Privacy & Security", href: "/topics/privacy-security" },
+      { label: "Self-Hosted Infrastructure", href: "/topics/self-hosted" },
     ],
   },
   {
     title: "Products",
     links: [
-      { label: "Kwas Launcher", href: "#products" },
-      { label: "Kwas Vault", href: "#products" },
-      { label: "Kwas Terminal", href: "#products" },
-      { label: "All products", href: "#products" },
+      { label: "Kwas Launcher", href: "/products" },
+      { label: "Kwas Vault", href: "/products" },
+      { label: "Kwas Terminal", href: "/products" },
+      { label: "All products", href: "/products" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About KWAS Tech", href: "#about" },
-      { label: "Changelog", href: "#changelog" },
+      { label: "About KWAS Tech", href: "/about" },
+      { label: "Changelog", href: "/changelog" },
       { label: "GitHub", href: "https://github.com/kwas-tech" },
-      { label: "Contact", href: "mailto:hello@kwas.tech" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
 ];
@@ -56,18 +57,9 @@ export function Footer() {
                 <Github size={16} />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Twitter / X"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-faint hover:text-fg"
-              >
-                <Twitter size={16} />
-              </a>
-              <a
-                href="mailto:hello@kwas.tech"
-                aria-label="Email"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-faint hover:text-fg"
+                href="mailto:info@kwas.tech"
+                aria-label="Email info@kwas.tech"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-faint hover:text-amber"
               >
                 <Mail size={16} />
               </a>
@@ -80,9 +72,15 @@ export function Footer() {
               <ul className="mt-4 flex flex-col gap-2.5">
                 {col.links.map((l) => (
                   <li key={l.label}>
-                    <a href={l.href} className="text-sm text-muted transition-colors hover:text-fg">
-                      {l.label}
-                    </a>
+                    {l.href.startsWith("http") || l.href.startsWith("mailto:") ? (
+                      <a href={l.href} className="text-sm text-muted transition-colors hover:text-fg">
+                        {l.label}
+                      </a>
+                    ) : (
+                      <Link href={l.href} className="text-sm text-muted transition-colors hover:text-fg">
+                        {l.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -91,8 +89,8 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line/70 pt-6 font-mono text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
-          <span>© {new Date().getFullYear()} Kwas Technologies — all rights reserved.</span>
-          <span>Built with Next.js · deployed on Vercel</span>
+          <span>© {new Date().getFullYear()} KWAS Technologies — Key Web App Solutions Technologies</span>
+          <span>info@kwas.tech</span>
         </div>
       </div>
     </footer>
