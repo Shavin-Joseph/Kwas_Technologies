@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { CircuitTraces } from "@/components/CircuitTraces";
@@ -11,6 +11,16 @@ const display = Space_Grotesk({
 });
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500"] });
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0d0f12" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kwas.tech"),
@@ -46,7 +56,10 @@ export const metadata: Metadata = {
     "Software Engineering",
   ],
   alternates: {
-    canonical: "/",
+    canonical: "https://kwas.tech",
+  },
+  verification: {
+    google: "google11e9ee6b456fb3da",
   },
   robots: {
     index: true,

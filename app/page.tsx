@@ -62,6 +62,87 @@ const structuredData = [
     logo: "https://kwas.tech/icon.png",
     slogan: "Key Web App Solutions — Practical Software That Stays Out Of Your Way",
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Kwas Launcher",
+    operatingSystem: "Android",
+    applicationCategory: "UtilitiesApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    author: {
+      "@type": "Organization",
+      name: "KWAS Technologies",
+    },
+    description: "A fast, gesture-driven Android launcher with no ads and no telemetry.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Kwas Vault",
+    operatingSystem: "Android, Windows, macOS, Linux",
+    applicationCategory: "SecurityApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    author: {
+      "@type": "Organization",
+      name: "KWAS Technologies",
+    },
+    description: "Encrypted, local-first credential storage with biometric unlock.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Kwas Terminal",
+    operatingSystem: "Android",
+    applicationCategory: "DeveloperApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    author: {
+      "@type": "Organization",
+      name: "KWAS Technologies",
+    },
+    description: "A native terminal emulator with tmux-style panes and SSH profiles.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What does KWAS Technologies stand for?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "KWAS Technologies stands for Key Web App Solutions Technologies, a software development organization specializing in privacy-first web applications, custom web app solutions, Android tools, and self-hosted software.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What software solutions does KWAS Technologies offer?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "KWAS Technologies builds products such as Kwas Launcher (Android home screen launcher), Kwas Vault (offline encrypted password manager), Kwas Terminal (Android terminal emulator with SSH), Kwas Sync (self-hosted P2P sync), Kwas Widgets, and Kwas DevKit.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are KWAS Technologies apps free and privacy-focused?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, all KWAS Technologies apps are free to use, privacy-first, zero-telemetry, and source-available under open licenses.",
+        },
+      },
+    ],
+  },
 ];
 
 export default function Home() {
