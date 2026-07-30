@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://kwas.tech/#topics",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: "https://kwas.tech/#products",
       lastModified: new Date(),
       changeFrequency: "weekly",

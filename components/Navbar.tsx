@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/ThemeToggle"; // Added import
 
 const LINKS = [
   { href: "#products", label: "Products" },
+  { href: "#topics", label: "Topics & Solutions" },
   { href: "#about", label: "Open Source" },
   { href: "#changelog", label: "Changelog" },
 ];
@@ -18,14 +19,19 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-ink/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a href="#top" className="flex items-center gap-2.5">
+        <a href="#top" className="flex items-center gap-2.5 group">
           <Logo />
-          <span className="font-display text-lg font-semibold tracking-tight text-fg">
-            Kwas Technologies
-          </span>
+          <div className="flex flex-col">
+            <span className="font-display text-lg font-semibold tracking-tight text-fg group-hover:text-amber transition-colors">
+              KWAS Technologies
+            </span>
+            <span className="hidden sm:inline font-mono text-[10px] text-faint -mt-1 tracking-tight">
+              Key Web App Solutions Technologies
+            </span>
+          </div>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {LINKS.map((l) => (
             <a
               key={l.href}

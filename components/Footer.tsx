@@ -2,26 +2,28 @@ import { Github, Mail, Twitter } from "lucide-react";
 
 const COLUMNS = [
   {
+    title: "Solutions & Topics",
+    links: [
+      { label: "Key Web App Solutions", href: "#topics" },
+      { label: "Android Apps & Tools", href: "#topics" },
+      { label: "Privacy & Security", href: "#topics" },
+      { label: "Self-Hosted Infrastructure", href: "#topics" },
+    ],
+  },
+  {
     title: "Products",
     links: [
       { label: "Kwas Launcher", href: "#products" },
       { label: "Kwas Vault", href: "#products" },
       { label: "Kwas Terminal", href: "#products" },
-      { label: "All apps", href: "#products" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Changelog", href: "#changelog" },
-      { label: "Documentation", href: "https://github.com/kwas-tech" },
-      { label: "License", href: "https://github.com/kwas-tech" },
+      { label: "All products", href: "#products" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About", href: "#about" },
+      { label: "About KWAS Tech", href: "#about" },
+      { label: "Changelog", href: "#changelog" },
       { label: "GitHub", href: "https://github.com/kwas-tech" },
       { label: "Contact", href: "mailto:hello@kwas.tech" },
     ],
@@ -35,10 +37,13 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
           <div className="col-span-2 sm:col-span-1">
             <span className="font-display text-lg font-semibold text-fg">
-              Kwas Technologies
+              KWAS Technologies
             </span>
-            <p className="mt-3 max-w-[220px] text-sm leading-relaxed text-faint">
-              Key Web App Solutions Technologies — practical software for modern teams.
+            <p className="mt-2 text-xs font-mono text-amber">
+              Key Web App Solutions Technologies
+            </p>
+            <p className="mt-3 max-w-[240px] text-xs leading-relaxed text-faint">
+              High-performance web app solutions, privacy-first mobile apps, and self-hosted tools built for modern teams.
             </p>
             <div className="mt-5 flex gap-3">
               <a

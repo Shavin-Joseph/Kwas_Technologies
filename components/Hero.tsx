@@ -32,50 +32,60 @@ export function Hero() {
         <div>
           <motion.div
             variants={item}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 font-mono text-xs text-signal"
+            className="mb-6 inline-flex flex-wrap items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3.5 py-1.5 font-mono text-xs text-amber"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-            v2.4.1 — now shipping
+            <span className="h-1.5 w-1.5 rounded-full bg-amber animate-pulse" />
+            KWAS Technologies — Key Web App Solutions Technologies
           </motion.div>
 
           <motion.h1
             variants={item}
             className="font-display text-4xl font-semibold leading-[1.08] tracking-tight text-fg sm:text-5xl lg:text-6xl"
           >
-            Software that stays
+            Key Web App Solutions &amp;
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber to-signal">
-              out of your way.
+              Software That Stays Out Of Your Way.
             </span>
           </motion.h1>
 
           <motion.p variants={item} className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
-            Kwas Technologies — Key Web App Solutions Technologies — builds practical software for teams that want
-            reliable products, plain pricing, and no unnecessary friction. No
-            ads. No trackers. No accounts you didn&apos;t ask for.
+            <strong className="text-fg font-semibold">KWAS Technologies</strong> (Key Web App Solutions Technologies) builds high-performance web applications, custom web app solutions, privacy-first Android tools, and self-hosted software for modern teams and creators. No ads. No trackers.
           </motion.p>
 
-          <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
+          <motion.div variants={item} className="mt-6 flex flex-wrap gap-2">
+            <span className="rounded-md border border-line bg-panel2 px-2.5 py-1 font-mono text-xs text-amber">
+              #WebApps
+            </span>
+            <span className="rounded-md border border-line bg-panel2 px-2.5 py-1 font-mono text-xs text-signal">
+              #KeyWebAppSolutions
+            </span>
+            <span className="rounded-md border border-line bg-panel2 px-2.5 py-1 font-mono text-xs text-muted">
+              #AndroidTools
+            </span>
+            <span className="rounded-md border border-line bg-panel2 px-2.5 py-1 font-mono text-xs text-faint">
+              #SelfHosted
+            </span>
+          </motion.div>
+
+          <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#products"
               className="group flex items-center gap-2 rounded-lg bg-amber px-5 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
             >
-              Browse the apps
+              Explore Products
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href="https://github.com/kwas-tech"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-fg transition-colors hover:border-faint"
+              href="#topics"
+              className="flex items-center gap-2 rounded-lg border border-line px-5 py-3 text-sm font-medium text-fg transition-colors hover:border-faint hover:text-amber"
             >
-              <Github size={16} />
-              View source
+              Browse Topics
             </a>
           </motion.div>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs text-faint">
             <span>MIT &amp; commercial licenses</span>
-            <span>Android · Desktop</span>
+            <span>Web · Android · Desktop</span>
             <span>Zero telemetry</span>
           </motion.div>
         </div>
