@@ -1,32 +1,34 @@
 import Link from "next/link";
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const COLUMNS = [
   {
-    title: "Solutions & Topics",
+    title: "Free Tools & Apps",
+    links: [
+      { label: "Image Converter & WebP", href: "/tools/image-converter" },
+      { label: "Universal QR Code Generator", href: "/tools/qr-generator" },
+      { label: "Word & Character Counter", href: "/tools/word-counter" },
+      { label: "Internet Speed Test", href: "/tools/speed-test" },
+      { label: "All Free Tools", href: "/tools" },
+    ],
+  },
+  {
+    title: "Solutions & Blog",
     links: [
       { label: "Key Web App Solutions", href: "/topics/web-apps" },
       { label: "Android Apps & Tools", href: "/topics/mobile-apps" },
       { label: "Privacy & Security", href: "/topics/privacy-security" },
-      { label: "Self-Hosted Infrastructure", href: "/topics/self-hosted" },
+      { label: "Tech Blog & Articles", href: "/blog" },
+      { label: "Software Hub", href: "/products" },
     ],
   },
   {
-    title: "Products",
-    links: [
-      { label: "Kwas Launcher", href: "/products" },
-      { label: "Kwas Vault", href: "/products" },
-      { label: "Kwas Terminal", href: "/products" },
-      { label: "All products", href: "/products" },
-    ],
-  },
-  {
-    title: "Company",
+    title: "Company & Legal",
     links: [
       { label: "About KWAS Tech", href: "/about" },
-      { label: "Changelog", href: "/changelog" },
-      { label: "GitHub", href: "https://github.com/kwas-tech" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Contact (info@kwas.tech)", href: "/contact" },
     ],
   },
 ];
@@ -47,15 +49,6 @@ export function Footer() {
               High-performance web app solutions, privacy-first mobile apps, and self-hosted tools built for modern teams.
             </p>
             <div className="mt-5 flex gap-3">
-              <a
-                href="https://github.com/kwas-tech"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-faint hover:text-fg"
-              >
-                <Github size={16} />
-              </a>
               <a
                 href="mailto:info@kwas.tech"
                 aria-label="Email info@kwas.tech"

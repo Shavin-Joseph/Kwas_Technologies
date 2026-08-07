@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Github,
   Menu,
   X,
   ChevronDown,
@@ -62,6 +62,7 @@ export const TOPIC_NAV_ITEMS = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [topicsOpen, setTopicsOpen] = useState(false);
   const [mobileTopicsOpen, setMobileTopicsOpen] = useState(false);
@@ -78,6 +79,11 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const isActive = (path: string) => {
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-ink/90 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-8">
@@ -85,21 +91,23 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2.5 group shrink-0">
           <Logo />
           <div className="flex flex-col">
-            <span className="font-display text-base sm:text-lg font-semibold tracking-tight text-fg group-hover:text-amber transition-colors">
+            <span className="font-display text-base font-bold tracking-tight text-fg group-hover:text-amber transition-colors leading-none">
               KWAS Technologies
             </span>
-            <span className="hidden sm:inline font-mono text-[10px] text-faint -mt-1 tracking-tight">
+            <span className="hidden xl:inline font-mono text-[9px] text-faint tracking-tight mt-1 leading-none">
               Key Web App Solutions Technologies
             </span>
           </div>
         </Link>
 
-        {/* Desktop Main Navigation Links */}
-        <div className="hidden items-center gap-6 md:flex">
+        {/* Desktop Main Navigation Links (Active at 1024px+) */}
+        <div className="hidden items-center gap-4 xl:gap-6 lg:flex">
           {/* Products Link */}
           <Link
             href="/products"
-            className="text-sm font-medium text-muted transition-colors hover:text-fg"
+            className={`text-sm font-medium transition-colors ${
+              isActive("/products") ? "text-amber font-semibold" : "text-muted hover:text-fg"
+            }`}
           >
             Products
           </Link>
@@ -113,12 +121,14 @@ export function Navbar() {
           >
             <button
               onClick={() => setTopicsOpen((prev) => !prev)}
-              className="flex items-center gap-1 text-sm font-medium text-muted transition-colors hover:text-fg py-2"
+              className={`flex items-center gap-1 text-sm font-medium transition-colors py-2 ${
+                isActive("/topics") ? "text-amber font-semibold" : "text-muted hover:text-fg"
+              }`}
             >
               <span>Topics &amp; Solutions</span>
               <ChevronDown
                 size={14}
-                className={`transition-transform duration-200 ${topicsOpen ? "rotate-180 text-amber" : ""}`}
+                className={`transition-transform duration-200 ${topicsOpen || isActive("/topics") ? "rotate-180 text-amber" : ""}`}
               />
             </button>
 
@@ -176,10 +186,35 @@ export function Navbar() {
             </AnimatePresence>
           </div>
 
+          {/* Free Online Tools Link */}
+          <Link
+            href="/tools"
+            className={`text-sm font-medium font-mono transition-colors flex items-center gap-1 shrink-0 ${
+              isActive("/tools")
+                ? "text-amber font-bold"
+                : "text-muted hover:text-amber"
+            }`}
+          >
+            <Sparkles size={14} className={isActive("/tools") ? "text-amber" : ""} />
+            Free Tools
+          </Link>
+
+          {/* Blog Link */}
+          <Link
+            href="/blog"
+            className={`text-sm font-medium transition-colors ${
+              isActive("/blog") ? "text-amber font-semibold" : "text-muted hover:text-fg"
+            }`}
+          >
+            Blog
+          </Link>
+
           {/* Open Source / About */}
           <Link
             href="/about"
-            className="text-sm font-medium text-muted transition-colors hover:text-fg"
+            className={`text-sm font-medium transition-colors ${
+              isActive("/about") ? "text-amber font-semibold" : "text-muted hover:text-fg"
+            }`}
           >
             Open Source
           </Link>
@@ -187,43 +222,28 @@ export function Navbar() {
           {/* Changelog */}
           <Link
             href="/changelog"
-            className="text-sm font-medium text-muted transition-colors hover:text-fg"
+            className={`text-sm font-medium transition-colors ${
+              isActive("/changelog") ? "text-amber font-semibold" : "text-muted hover:text-fg"
+            }`}
           >
             Changelog
-          </Link>
-
-          {/* Contact */}
-          <Link
-            href="/contact"
-            className="text-sm font-medium text-muted transition-colors hover:text-fg"
-          >
-            Contact
           </Link>
         </div>
 
         {/* Desktop Utility Controls */}
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/contact"
-            className="flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 font-mono text-xs font-medium text-fg transition-colors hover:border-amber/50 hover:text-amber"
+            className="hidden xl:flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 font-mono text-xs font-medium text-fg transition-colors hover:border-amber/50 hover:text-amber shrink-0"
           >
             <Mail size={14} />
             info@kwas.tech
           </Link>
-          <a
-            href="https://github.com/kwas-tech"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub Repository"
-            className="flex items-center justify-center rounded-lg border border-line p-2 text-muted transition-colors hover:border-faint hover:text-fg"
-          >
-            <Github size={16} />
-          </a>
           <ThemeToggle />
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <ThemeToggle />
           <button
             aria-label="Toggle mobile menu"
@@ -243,7 +263,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-line/70 bg-ink md:hidden"
+            className="overflow-hidden border-t border-line/70 bg-ink lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
               <Link
@@ -252,6 +272,22 @@ export function Navbar() {
                 className="rounded-md px-3 py-2 text-sm font-medium text-muted hover:bg-panel hover:text-fg"
               >
                 Products
+              </Link>
+
+              <Link
+                href="/tools"
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-2 text-sm font-semibold text-amber font-mono hover:bg-panel"
+              >
+                Free Tools (Online Utilities)
+              </Link>
+
+              <Link
+                href="/blog"
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted hover:bg-panel hover:text-fg"
+              >
+                Blog &amp; Articles
               </Link>
 
               {/* Mobile Expandable Topics Accordion */}
@@ -314,16 +350,6 @@ export function Navbar() {
               >
                 Contact Us (info@kwas.tech)
               </Link>
-
-              <a
-                href="https://github.com/kwas-tech"
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-fg px-3.5 py-2.5 text-sm font-medium text-ink"
-              >
-                <Github size={16} />
-                GitHub Repository
-              </a>
             </div>
           </motion.div>
         )}
@@ -339,7 +365,7 @@ function Logo() {
       alt="KWAS Technologies logo"
       width={28}
       height={28}
-      className="rounded-md object-cover"
+      className="h-7 w-7 rounded-md object-cover"
       priority
     />
   );

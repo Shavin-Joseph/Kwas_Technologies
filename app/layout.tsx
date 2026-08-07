@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { CircuitTraces } from "@/components/CircuitTraces";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -118,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="pointer-events-none fixed inset-0 -z-20 bg-grid [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
           <CircuitTraces variant="ambient" className="pointer-events-none fixed inset-0 -z-10 opacity-40" />
           {children}
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>
