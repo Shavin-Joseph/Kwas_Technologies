@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { CircuitTraces } from "@/components/CircuitTraces";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -105,6 +106,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   other: {
+    "google-adsense-account": "ca-pub-8249181691893109",
     "brand-name": "KWAS Technologies",
     "brand-fullname": "Key Web App Solutions Technologies",
     "topics": "Web Apps, Custom Web Solutions, Mobile Apps, Developer Tools, Privacy Software",
@@ -114,6 +116,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-8249181691893109" />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8249181691893109"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="relative min-h-screen bg-ink font-body text-fg transition-colors duration-300">
         <ThemeProvider>
           <div className="pointer-events-none fixed inset-0 -z-20 bg-grid [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
