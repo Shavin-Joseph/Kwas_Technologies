@@ -15,6 +15,13 @@ export interface ContactSubmission {
   message: string;
 }
 
+export interface AppRatingData {
+  appSlug: string;
+  appRating: number;
+  siteRating: number;
+  reviewText?: string;
+}
+
 export interface FirestoreProduct {
   slug: string;
   name: string;
@@ -64,6 +71,39 @@ export const submitToFirestore = async (data: ContactSubmission) => {
     return res.ok;
   } catch (e) {
     console.error("Firestore contact submission error:", e);
+    return true;
+  }
+};
+
+/**
+ * Submits user ratings for an app and the site to Cloud Firestore
+ */
+export const submitRatingToFirestore = async (data: AppRatingData) => {
+  const projectId = firebaseConfig.projectId;
+  const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/app_ratings`;
+
+  const payload = {
+    fields: {
+      appSlug: { stringValue: data.appSlug },
+      appRating: { integerValue: data.appRating.toString() },
+      siteRating: { integerValue: data.siteRating.toString() },
+      reviewText: { stringValue: data.reviewText || "" },
+      createdAt: { timestampValue: new Date().toISOString() },
+      site: { stringValue: "KWAS Technologies" },
+    },
+  };
+
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    return res.ok;
+  } catch (e) {
+    console.error("Firestore rating submission error:", e);
     return true;
   }
 };

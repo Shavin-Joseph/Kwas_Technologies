@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/products",
+    "/products/kwas-syslens",
     "/tools",
     "/tools/image-converter",
     "/tools/qr-generator",
@@ -34,15 +35,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === "" || route.startsWith("/tools") ? "daily" : "weekly",
+    changeFrequency: route === "" || route.startsWith("/tools") || route === "/products/kwas-syslens" ? "daily" : "weekly",
     priority:
-      route === ""
+      route === "" || route === "/products/kwas-syslens"
         ? 1.0
-        : route.startsWith("/tools")
+        : route === "/products"
         ? 0.95
-        : route.startsWith("/blog")
+        : route.startsWith("/tools")
         ? 0.9
-        : route.startsWith("/topics/")
+        : route.startsWith("/blog")
         ? 0.85
         : 0.8,
   }));

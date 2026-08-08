@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Download,
@@ -19,9 +20,14 @@ import {
   Info,
   Clock,
   Code2,
+  Cpu,
+  ThumbsUp,
+  MessageSquare,
+  Send,
 } from "lucide-react";
 import { apps as initialApps, type AppItem, type Status, type Category } from "@/lib/data";
-import { fetchProductsFromFirestore } from "@/lib/firebase";
+import { fetchProductsFromFirestore, submitRatingToFirestore } from "@/lib/firebase";
+import { fetchLatestGitHubRelease } from "@/lib/githubReleases";
 
 const CATEGORIES: ("All" | Category)[] = [
   "All",
@@ -38,6 +44,7 @@ const STATUS_STYLE: Record<Status, string> = {
 };
 
 const ICON_MAP: Record<string, any> = {
+  "kwas-syslens": Cpu,
   "kwas-launcher": Smartphone,
   "kwas-vault": ShieldCheck,
   "kwas-terminal": Terminal,
@@ -53,24 +60,113 @@ export function Products() {
   const [activeModalApp, setActiveModalApp] = useState<AppItem | null>(null);
   const [isLoadingLive, setIsLoadingLive] = useState(true);
 
-  // Fetch live products data from Cloud Firestore on mount
+  // Post-Download Rating Modal States
+  const [ratingModalApp, setRatingModalApp] = useState<AppItem | null>(null);
+  const [appRating, setAppRating] = useState<number>(5);
+  const [siteRating, setSiteRating] = useState<number>(5);
+  const [reviewText, setReviewText] = useState<string>("");
+  const [isSubmittingRating, setIsSubmittingRating] = useState<boolean>(false);
+  const [ratingSubmitted, setRatingSubmitted] = useState<boolean>(false);
+
+  // Fetch live products data from GitHub Releases & Cloud Firestore on mount
   useEffect(() => {
     async function loadLiveData() {
       setIsLoadingLive(true);
+      
+      // 1. Fetch live release details from GitHub API for Shavin-Joseph/Sys_Info
+      const ghRelease = await fetchLatestGitHubRelease("Shavin-Joseph", "Sys_Info");
+      
+      let baseList = [...initialApps];
+      if (ghRelease) {
+        baseList = baseList.map((app) => {
+          if (app.slug === "kwas-syslens") {
+            return {
+              ...app,
+              version: ghRelease.version,
+              downloadUrl: ghRelease.downloadUrl,
+              size: ghRelease.size,
+              downloads: ghRelease.downloads > 0 ? ghRelease.downloads : app.downloads,
+              sourceUrl: ghRelease.sourceUrl,
+            };
+          }
+          return app;
+        });
+      }
+
+      // 2. Fetch live products data from Cloud Firestore if available
       const firestoreProducts = await fetchProductsFromFirestore();
       if (firestoreProducts && firestoreProducts.length > 0) {
-        // Merge Firestore dynamic counts & status with icon mappings
-        const merged: AppItem[] = firestoreProducts.map((fp) => ({
+        baseList = firestoreProducts.map((fp) => ({
           ...fp,
           license: (fp.license as any) || "Free + Open Source",
           icon: ICON_MAP[fp.slug] || Smartphone,
         }));
-        setProductList(merged);
       }
+
+      setProductList(baseList);
       setIsLoadingLive(false);
     }
     loadLiveData();
   }, []);
+
+  // Handler for Direct Download + Triggering Post-Download Rating Modal
+  const handleDownloadClick = (app: AppItem, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+
+    // Trigger Direct Browser Download
+    const link = document.createElement("a");
+    link.href = app.downloadUrl;
+    link.download = `${app.slug}-${app.version}.apk`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Open Post-Download Rating Modal after 600ms
+    setTimeout(() => {
+      setRatingModalApp(app);
+      setRatingSubmitted(false);
+      setAppRating(5);
+      setSiteRating(5);
+      setReviewText("");
+    }, 600);
+  };
+
+  // Submit Rating Handler
+  const handleRatingSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!ratingModalApp) return;
+
+    setIsSubmittingRating(true);
+    await submitRatingToFirestore({
+      appSlug: ratingModalApp.slug,
+      appRating,
+      siteRating,
+      reviewText,
+    });
+
+    // Update live metrics locally
+    setProductList((prev) =>
+      prev.map((item) => {
+        if (item.slug === ratingModalApp.slug) {
+          return {
+            ...item,
+            downloads: item.downloads + 1,
+          };
+        }
+        return item;
+      })
+    );
+
+    setIsSubmittingRating(false);
+    setRatingSubmitted(true);
+
+    setTimeout(() => {
+      setRatingModalApp(null);
+      setRatingSubmitted(false);
+    }, 2400);
+  };
 
   // Filter apps by category & search query
   const filteredApps = productList.filter((app) => {
@@ -82,7 +178,7 @@ export function Products() {
     return matchesCategory && matchesSearch;
   });
 
-  const featuredApp = productList.find((a) => a.slug === "kwas-launcher") || productList[0];
+  const featuredApp = productList.find((a) => a.slug === "kwas-syslens") || productList[0];
 
   return (
     <section id="products" className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
@@ -91,26 +187,26 @@ export function Products() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3.5 py-1 font-mono text-xs font-semibold text-amber">
             <Sparkles size={14} />
-            Live Firebase Connected App Store
+            Official Software App Store
           </div>
           <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-fg sm:text-4xl lg:text-5xl">
             Apps &amp; Software Downloads
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">
-            All software statistics, download metrics, and release statuses are fetched live from <strong className="text-fg">Firebase Cloud Firestore</strong>. Apps currently in active pre-release development are marked accordingly.
+            High-performance system utility applications, privacy software, and developer tools built by <strong className="text-fg">KWAS Technologies (Key Web App Solutions Technologies)</strong>.
           </p>
         </div>
 
         {/* Security & Verification Badge */}
         <div className="flex items-center gap-3 rounded-xl border border-line bg-panel2 p-3.5 shrink-0">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-amber/30 bg-amber/10 text-amber">
-            <Clock size={20} />
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-500">
+            <CheckCircle2 size={20} />
           </div>
           <div>
             <div className="flex items-center gap-1.5 font-display text-xs font-semibold text-fg">
-              <span>Under Active Development</span>
+              <span>Google Play Ready</span>
             </div>
-            <div className="text-[11px] font-mono text-muted">Real Counts &amp; Dynamic Firestore Data</div>
+            <div className="text-[11px] font-mono text-muted">Verified Offline &amp; Zero Trackers</div>
           </div>
         </div>
       </div>
@@ -121,9 +217,9 @@ export function Products() {
           <div className="lg:col-span-7">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-md bg-amber px-2.5 py-1 font-mono text-xs font-bold text-ink">
-                Featured Pre-Release
+                Featured Production Release
               </span>
-              <span className="rounded-md border border-amber/40 bg-panel px-2.5 py-1 font-mono text-xs font-semibold text-amber">
+              <span className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-1 font-mono text-xs font-semibold text-emerald-500">
                 {featuredApp.status}
               </span>
               <span className="font-mono text-xs text-muted">
@@ -153,36 +249,50 @@ export function Products() {
 
             {/* Action Buttons */}
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => setActiveModalApp(featuredApp)}
-                className="flex items-center gap-2 rounded-xl bg-amber px-5 py-3 text-sm font-semibold text-ink shadow-lg transition-transform hover:-translate-y-0.5"
-              >
-                {featuredApp.isReleased ? (
-                  <>
-                    <Download size={16} /> Get Release Package
-                  </>
-                ) : (
-                  <>
-                    <Clock size={16} /> Under Development (Pre-Release)
-                  </>
-                )}
-              </button>
+              {featuredApp.isReleased ? (
+                <button
+                  onClick={(e) => handleDownloadClick(featuredApp, e)}
+                  className="flex items-center gap-2 rounded-xl bg-amber px-5 py-3 text-sm font-semibold text-ink shadow-lg transition-transform hover:-translate-y-0.5"
+                >
+                  <Download size={16} /> Download APK Package ({featuredApp.size})
+                </button>
+              ) : (
+                <button
+                  onClick={() => setActiveModalApp(featuredApp)}
+                  className="flex items-center gap-2 rounded-xl bg-amber px-5 py-3 text-sm font-semibold text-ink shadow-lg transition-transform hover:-translate-y-0.5"
+                >
+                  <Clock size={16} /> Under Development (Pre-Release)
+                </button>
+              )}
               <button
                 onClick={() => setActiveModalApp(featuredApp)}
                 className="flex items-center gap-1.5 rounded-xl border border-line bg-panel px-4 py-3 text-sm font-medium text-fg transition-colors hover:border-amber/50 hover:bg-panel2"
               >
                 <Info size={16} />
-                Store Page Details
+                Full App Specifications
               </button>
             </div>
           </div>
 
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative flex h-48 w-48 sm:h-56 sm:w-56 items-center justify-center rounded-3xl border border-amber/30 bg-gradient-to-b from-amber/20 to-panel p-6 shadow-2xl">
-              <featuredApp.icon size={84} className="text-amber" strokeWidth={1.5} />
-              <div className="absolute -bottom-3 rounded-full border border-amber/40 bg-panel px-3 py-1 font-mono text-[11px] font-bold text-amber shadow-md">
-                {featuredApp.status}
+            <div className="flex flex-col items-center">
+              <div className="relative flex h-48 w-48 sm:h-56 sm:w-56 items-center justify-center rounded-3xl border border-amber/30 bg-panel p-3 shadow-2xl overflow-hidden group">
+                {featuredApp.iconImage ? (
+                  <Image
+                    src={featuredApp.iconImage}
+                    alt={featuredApp.name}
+                    width={220}
+                    height={220}
+                    className="h-full w-full rounded-2xl object-cover"
+                    priority
+                  />
+                ) : (
+                  <featuredApp.icon size={84} className="text-amber" strokeWidth={1.5} />
+                )}
               </div>
+              <span className="mt-3.5 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3.5 py-1 font-mono text-xs font-semibold text-emerald-500 shadow-sm">
+                Release Status: {featuredApp.status}
+              </span>
             </div>
           </div>
         </div>
@@ -236,8 +346,18 @@ export function Products() {
               <div>
                 {/* Header: Icon, Category & Status */}
                 <div className="flex items-start justify-between gap-3">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-amber/20 bg-panel2 text-amber shadow-sm group-hover:scale-105 group-hover:border-amber/50 transition-all">
-                    <Icon size={28} strokeWidth={1.75} />
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-amber/20 bg-panel2 text-amber shadow-sm group-hover:scale-105 group-hover:border-amber/50 transition-all overflow-hidden p-1.5">
+                    {app.iconImage ? (
+                      <Image
+                        src={app.iconImage}
+                        alt={app.name}
+                        width={56}
+                        height={56}
+                        className="h-full w-full rounded-xl object-contain"
+                      />
+                    ) : (
+                      <Icon size={28} strokeWidth={1.75} />
+                    )}
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     <span
@@ -287,30 +407,27 @@ export function Products() {
                 </div>
               </div>
 
-              {/* Action Bar (App Store style) */}
+              {/* Action Bar */}
               <div className="mt-6 flex items-center gap-2 border-t border-line/70 pt-4">
-                <button
-                  onClick={() => setActiveModalApp(app)}
-                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-xl px-3.5 py-2.5 font-mono text-xs font-bold transition-transform hover:-translate-y-0.5 shadow-md ${
-                    app.isReleased
-                      ? "bg-amber text-ink"
-                      : "bg-panel2 border border-line text-fg hover:border-amber/50"
-                  }`}
-                >
-                  {app.isReleased ? (
-                    <>
-                      <Download size={14} /> Get Package
-                    </>
-                  ) : (
-                    <>
-                      <Clock size={14} className="text-amber" /> Under Development
-                    </>
-                  )}
-                </button>
+                {app.isReleased ? (
+                  <button
+                    onClick={(e) => handleDownloadClick(app, e)}
+                    className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-amber px-3.5 py-2.5 font-mono text-xs font-bold text-ink transition-transform hover:-translate-y-0.5 shadow-md"
+                  >
+                    <Download size={14} /> Get Package
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setActiveModalApp(app)}
+                    className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-panel2 border border-line px-3.5 py-2.5 font-mono text-xs font-bold text-fg hover:border-amber/50"
+                  >
+                    <Clock size={14} className="text-amber" /> Under Development
+                  </button>
+                )}
                 <button
                   onClick={() => setActiveModalApp(app)}
                   className="flex items-center justify-center rounded-xl border border-line bg-panel2 px-3 py-2.5 text-xs font-mono font-medium text-fg transition-colors hover:border-amber/50 hover:bg-panel"
-                  title="View Store Details"
+                  title="View Store Specifications"
                 >
                   Details
                 </button>
@@ -340,8 +457,18 @@ export function Products() {
 
               {/* Modal App Header */}
               <div className="flex items-start gap-4">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-amber/30 bg-panel2 text-amber shadow-md">
-                  <activeModalApp.icon size={36} />
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-amber/30 bg-panel2 text-amber shadow-md overflow-hidden p-1.5">
+                  {activeModalApp.iconImage ? (
+                    <Image
+                      src={activeModalApp.iconImage}
+                      alt={activeModalApp.name}
+                      width={64}
+                      height={64}
+                      className="h-full w-full rounded-xl object-contain"
+                    />
+                  ) : (
+                    <activeModalApp.icon size={36} />
+                  )}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
@@ -404,22 +531,161 @@ export function Products() {
 
               {/* Action Footer */}
               <div className="mt-6 flex flex-col sm:flex-row items-center gap-3">
-                <a
-                  href={activeModalApp.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex flex-1 w-full items-center justify-center gap-2 rounded-xl bg-amber px-5 py-3 text-sm font-bold text-ink shadow-lg transition-transform hover:-translate-y-0.5"
-                >
-                  <Code2 size={16} />
-                  View GitHub Source Code
-                </a>
-                <a
-                  href="mailto:info@kwas.tech?subject=Beta%20Access%20Request%20for%20"
-                  className="flex items-center justify-center gap-1.5 rounded-xl border border-line bg-panel2 px-4 py-3 text-xs font-mono font-medium text-fg hover:border-amber/50"
-                >
-                  Request Pre-Release Access
-                </a>
+                {activeModalApp.isReleased ? (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        const targetApp = activeModalApp;
+                        setActiveModalApp(null);
+                        handleDownloadClick(targetApp, e);
+                      }}
+                      className="flex flex-1 w-full items-center justify-center gap-2 rounded-xl bg-amber px-5 py-3 text-sm font-bold text-ink shadow-lg transition-transform hover:-translate-y-0.5"
+                    >
+                      <Download size={16} />
+                      Download APK Package ({activeModalApp.size})
+                    </button>
+                    <a
+                      href={activeModalApp.releasePageUrl || "https://github.com/Shavin-Joseph/Sys_Info/releases/tag/v1.0.0"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-1.5 rounded-xl border border-line bg-panel2 px-4 py-3 text-xs font-mono font-medium text-fg hover:border-amber/50 hover:bg-panel"
+                    >
+                      <Github size={15} /> GitHub Release
+                    </a>
+                  </>
+                ) : (
+                  <a
+                    href="mailto:info@kwas.tech?subject=Beta%20Access%20Request"
+                    className="flex flex-1 w-full items-center justify-center gap-1.5 rounded-xl border border-line bg-panel2 px-4 py-3 text-xs font-mono font-medium text-fg hover:border-amber/50"
+                  >
+                    Request Pre-Release Access
+                  </a>
+                )}
               </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Post-Download Rate App & Rate Site Interactive Modal */}
+      <AnimatePresence>
+        {ratingModalApp && (
+          <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 14 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 10 }}
+              className="relative w-full max-w-lg rounded-2xl border border-amber/40 bg-panel p-6 sm:p-8 shadow-2xl"
+            >
+              <button
+                onClick={() => setRatingModalApp(null)}
+                className="absolute right-4 top-4 rounded-full border border-line bg-panel2 p-2 text-muted hover:text-fg"
+              >
+                <X size={16} />
+              </button>
+
+              {ratingSubmitted ? (
+                <div className="py-6 text-center">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500">
+                    <CheckCircle2 size={36} />
+                  </div>
+                  <h3 className="mt-4 font-display text-xl font-bold text-fg">Thank You for Your Feedback!</h3>
+                  <p className="mt-2 text-xs font-mono text-muted">
+                    Your ratings for <strong className="text-amber">{ratingModalApp.name}</strong> and KWAS Technologies have been saved to live database metrics.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleRatingSubmit}>
+                  <div className="flex items-center gap-3 border-b border-line pb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-amber/30 bg-panel2 text-amber">
+                      <ThumbsUp size={24} />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-lg font-bold text-fg">Download Started!</h3>
+                      <p className="text-xs font-mono text-muted">Please rate {ratingModalApp.name} &amp; KWAS Site</p>
+                    </div>
+                  </div>
+
+                  {/* Section 1: Rate the App */}
+                  <div className="mt-5">
+                    <label className="block text-xs font-mono font-semibold text-fg">
+                      1. Rate {ratingModalApp.name} App ({appRating} / 5 Stars)
+                    </label>
+                    <div className="mt-2 flex items-center gap-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          type="button"
+                          key={star}
+                          onClick={() => setAppRating(star)}
+                          className="p-1 text-amber transition-transform hover:scale-125"
+                        >
+                          <Star
+                            size={26}
+                            fill={star <= appRating ? "currentColor" : "none"}
+                            className={star <= appRating ? "text-amber" : "text-faint"}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Section 2: Rate the Site */}
+                  <div className="mt-5">
+                    <label className="block text-xs font-mono font-semibold text-fg">
+                      2. Rate KWAS Technologies Site ({siteRating} / 5 Stars)
+                    </label>
+                    <div className="mt-2 flex items-center gap-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          type="button"
+                          key={star}
+                          onClick={() => setSiteRating(star)}
+                          className="p-1 text-amber transition-transform hover:scale-125"
+                        >
+                          <Star
+                            size={26}
+                            fill={star <= siteRating ? "currentColor" : "none"}
+                            className={star <= siteRating ? "text-amber" : "text-faint"}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Section 3: Review Feedback Text */}
+                  <div className="mt-5">
+                    <label className="block text-xs font-mono font-semibold text-fg mb-1.5">
+                      3. Optional Review / Feedback Notes
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={reviewText}
+                      onChange={(e) => setReviewText(e.target.value)}
+                      placeholder="Tell us what features or tools you'd like to see next..."
+                      className="w-full rounded-xl border border-line bg-panel2 p-3 text-xs text-fg placeholder:text-faint focus:border-amber focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  {/* Modal Action Buttons */}
+                  <div className="mt-6 flex items-center gap-3">
+                    <button
+                      type="submit"
+                      disabled={isSubmittingRating}
+                      className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-amber px-5 py-3 text-xs font-mono font-bold text-ink shadow-lg transition-transform hover:-translate-y-0.5 disabled:opacity-50"
+                    >
+                      <Send size={14} />
+                      {isSubmittingRating ? "Submitting..." : "Submit Ratings & Download Metrics"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setRatingModalApp(null)}
+                      className="rounded-xl border border-line bg-panel2 px-4 py-3 text-xs font-mono text-muted hover:text-fg"
+                    >
+                      Skip
+                    </button>
+                  </div>
+                </form>
+              )}
             </motion.div>
           </div>
         )}

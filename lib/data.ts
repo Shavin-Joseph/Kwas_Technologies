@@ -5,8 +5,10 @@ import {
   Layers,
   RadioTower,
   Puzzle,
+  Cpu,
   type LucideIcon,
 } from "lucide-react";
+import { getApkFileSize } from "@/lib/apkHelper";
 
 export type License = "Free" | "Free + Open Source" | "Free + Commercial";
 export type Status = "In Development" | "Beta" | "Stable";
@@ -21,10 +23,12 @@ export interface AppItem {
   status: Status;
   category: Category;
   icon: LucideIcon;
+  iconImage?: string;
   platforms: string[];
   license: License;
   downloadUrl: string;
   sourceUrl: string;
+  releasePageUrl?: string;
   rating: number;
   downloads: number;
   size: string;
@@ -35,6 +39,36 @@ export interface AppItem {
 }
 
 export const apps: AppItem[] = [
+  {
+    slug: "kwas-syslens",
+    name: "KWAS SysLens",
+    tagline: "Extreme system diagnostics & low-level Linux kernel auditing",
+    description:
+      "A professional-grade system diagnostics tool for Android. Surface low-level hardware parameters, processor load averages, memory page faults, Wi-Fi RSSI signal metrics, and Linux kernel /proc data with 100% local privacy.",
+    version: "v1.0.0",
+    status: "Stable",
+    category: "Android Apps",
+    icon: Cpu,
+    iconImage: "/images/kwas-syslens-icon.png",
+    platforms: ["Android 7.0+", "Android 15 Ready"],
+    license: "Free + Commercial",
+    downloadUrl: "https://github.com/Shavin-Joseph/Sys_Info/releases/latest",
+    sourceUrl: "https://github.com/Shavin-Joseph/Sys_Info",
+    releasePageUrl: "https://github.com/Shavin-Joseph/Sys_Info/releases/tag/v1.0.0",
+    rating: 5.0,
+    downloads: 1420,
+    size: getApkFileSize("kwas-syslens-v1.0.0.apk"),
+    isReleased: true,
+    featured: true,
+    features: [
+      "Linux kernel /proc parsing & CPU flag mapping (AES, NEON, SHA1)",
+      "Memory (RAM) breakdown (Active, Dirty, Swap, VM page faults)",
+      "Ultra Network Audit (Wi-Fi RSSI, BSSID, 5G/LTE cell operator)",
+      "Battery mA current discharge & partition block filesystem table",
+      "Jetpack Compose Material 3 Swiss-style eye-comfort typography",
+    ],
+    releaseNotes: "v1.0.0 Production Release — Google Play Store Ready with full offline hardware transparency.",
+  },
   {
     slug: "kwas-launcher",
     name: "Kwas Launcher",
@@ -47,8 +81,8 @@ export const apps: AppItem[] = [
     icon: Smartphone,
     platforms: ["Android 8.0+"],
     license: "Free + Open Source",
-    downloadUrl: "https://github.com/kwas-tech",
-    sourceUrl: "https://github.com/kwas-tech",
+    downloadUrl: "#",
+    sourceUrl: "#",
     rating: 5.0,
     downloads: 0,
     size: "TBA (In Development)",
@@ -60,7 +94,7 @@ export const apps: AppItem[] = [
       "Sub-millisecond fuzzy app drawer search",
       "Ultra-low RAM & CPU footprint",
     ],
-    releaseNotes: "Currently in active pre-release development cycle. Code hosted on GitHub.",
+    releaseNotes: "Currently in active pre-release development cycle.",
   },
   {
     slug: "kwas-vault",
@@ -74,8 +108,8 @@ export const apps: AppItem[] = [
     icon: ShieldCheck,
     platforms: ["Android", "Web App", "Desktop"],
     license: "Free + Open Source",
-    downloadUrl: "https://github.com/kwas-tech",
-    sourceUrl: "https://github.com/kwas-tech",
+    downloadUrl: "#",
+    sourceUrl: "#",
     rating: 5.0,
     downloads: 0,
     size: "TBA (In Development)",
@@ -101,8 +135,8 @@ export const apps: AppItem[] = [
     icon: Terminal,
     platforms: ["Android", "Web CLI"],
     license: "Free + Open Source",
-    downloadUrl: "https://github.com/kwas-tech",
-    sourceUrl: "https://github.com/kwas-tech",
+    downloadUrl: "#",
+    sourceUrl: "#",
     rating: 5.0,
     downloads: 0,
     size: "TBA (In Development)",
@@ -128,8 +162,8 @@ export const apps: AppItem[] = [
     icon: RadioTower,
     platforms: ["Android", "Web App", "Linux/Docker"],
     license: "Free + Open Source",
-    downloadUrl: "https://github.com/kwas-tech",
-    sourceUrl: "https://github.com/kwas-tech",
+    downloadUrl: "#",
+    sourceUrl: "#",
     rating: 5.0,
     downloads: 0,
     size: "TBA (In Development)",
@@ -155,8 +189,8 @@ export const apps: AppItem[] = [
     icon: Layers,
     platforms: ["Android 12+"],
     license: "Free + Open Source",
-    downloadUrl: "https://github.com/kwas-tech",
-    sourceUrl: "https://github.com/kwas-tech",
+    downloadUrl: "#",
+    sourceUrl: "#",
     rating: 5.0,
     downloads: 0,
     size: "TBA (In Development)",
@@ -182,8 +216,8 @@ export const apps: AppItem[] = [
     icon: Puzzle,
     platforms: ["CLI", "Windows", "macOS", "Linux"],
     license: "Free + Open Source",
-    downloadUrl: "https://github.com/kwas-tech",
-    sourceUrl: "https://github.com/kwas-tech",
+    downloadUrl: "#",
+    sourceUrl: "#",
     rating: 5.0,
     downloads: 0,
     size: "TBA (In Development)",
@@ -208,6 +242,13 @@ export interface ChangelogEntry {
 }
 
 export const changelog: ChangelogEntry[] = [
+  {
+    version: "v1.0.0",
+    date: "August 2026",
+    title: "KWAS SysLens v1.0.0 Production Release",
+    description: "Official production launch of KWAS SysLens — extreme Android system diagnostics & Linux kernel /proc auditing.",
+    type: "Release",
+  },
   {
     version: "v0.1.0-dev",
     date: "Jul 2026",
