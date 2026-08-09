@@ -115,7 +115,7 @@ export default function TermsOfServicePage() {
               <h2>5. Contact Us</h2>
             </div>
             <p>
-              If you have any questions regarding these Terms of Service, please contact us at <a href="mailto:info@kwas.tech" className="font-mono text-amber hover:underline font-semibold">info@kwas.tech</a>.
+              If you have any questions regarding these Terms of Service, please contact us at <a href="mailto:support@kwas.tech" className="font-mono text-amber hover:underline font-semibold">support@kwas.tech</a>.
             </p>
           </section>
         </div>

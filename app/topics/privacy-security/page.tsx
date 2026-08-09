@@ -103,7 +103,7 @@ export default function PrivacySecurityTopicPage() {
                 Kwas Vault — Encrypted Password Manager
               </h3>
               <p className="mt-1 text-sm text-muted max-w-xl">
-                Store passwords and credentials safely offline. Need custom security integration for your team? Contact us at <span className="font-mono text-amber">info@kwas.tech</span>.
+                Store passwords and credentials safely offline. Need custom security integration for your team? Contact us at <span className="font-mono text-amber">support@kwas.tech</span>.
               </p>
             </div>
             <Link

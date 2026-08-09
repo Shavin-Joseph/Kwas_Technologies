@@ -101,7 +101,7 @@ export default function MobileAppsTopicPage() {
                 Try Kwas Launcher &amp; Kwas Widgets
               </h3>
               <p className="mt-1 text-sm text-muted max-w-xl">
-                Explore our stable Android apps ready for free download, or contact us for custom mobile white-label solutions at <span className="font-mono text-amber">info@kwas.tech</span>.
+                Explore our stable Android apps ready for free download, or contact us for custom mobile white-label solutions at <span className="font-mono text-amber">support@kwas.tech</span>.
               </p>
             </div>
             <Link

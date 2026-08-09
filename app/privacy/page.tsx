@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
               <h2>2. Information We Collect</h2>
             </div>
             <p>
-              <strong>Direct Contact Information:</strong> If you contact us directly via our contact form or at <span className="font-mono text-amber">info@kwas.tech</span>, we may receive information such as your name, email address, message contents, and any attachments you provide.
+              <strong>Direct Contact Information:</strong> If you contact us directly via our contact form or at <span className="font-mono text-amber">support@kwas.tech</span>, we may receive information such as your name, email address, message contents, and any attachments you provide.
             </p>
             <p className="mt-3">
               <strong>Interactive Online Tools Data:</strong> Our client-side online tools (such as the Image Converter, QR Code Generator, Word Counter, Speed Test, and Unit Converter) process your data locally in your browser session. Your uploaded images and text entries remain on your device and are never stored on our servers.
@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
               <h2>5. Contact Information</h2>
             </div>
             <p>
-              If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us by email at <a href="mailto:info@kwas.tech" className="font-mono text-amber hover:underline font-semibold">info@kwas.tech</a>.
+              If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us by email at <a href="mailto:support@kwas.tech" className="font-mono text-amber hover:underline font-semibold">support@kwas.tech</a>.
             </p>
           </section>
         </div>

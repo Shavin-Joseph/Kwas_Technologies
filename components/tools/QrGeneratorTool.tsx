@@ -78,7 +78,7 @@ export function QrGeneratorTool() {
                     onClick={() => {
                       setType(item.id as QRType);
                       if (item.id === "url") setTextValue("https://kwas.tech");
-                      if (item.id === "email") setTextValue("info@kwas.tech");
+                      if (item.id === "email") setTextValue("support@kwas.tech");
                       if (item.id === "phone") setTextValue("+1234567890");
                     }}
                     className={`flex items-center gap-2 rounded-xl px-4 py-2.5 font-mono text-xs font-semibold transition-all ${

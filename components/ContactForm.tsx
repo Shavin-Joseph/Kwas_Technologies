@@ -55,11 +55,11 @@ export function ContactForm() {
               For general inquiries, web application solutions, and technical support:
             </p>
             <a
-              href="mailto:info@kwas.tech"
+              href="mailto:support@kwas.tech"
               className="mt-4 inline-flex items-center gap-2 rounded-lg bg-amber px-4 py-2.5 font-mono text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5"
             >
               <Mail size={16} />
-              info@kwas.tech
+              support@kwas.tech
             </a>
           </div>
 

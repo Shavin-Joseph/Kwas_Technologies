@@ -101,7 +101,7 @@ export default function SelfHostedTopicPage() {
                 Kwas Sync — P2P File Synchronization
               </h3>
               <p className="mt-1 text-sm text-muted max-w-xl">
-                Synchronize files directly between your devices. Need a private deployment setup? Contact KWAS Technologies at <span className="font-mono text-amber">info@kwas.tech</span>.
+                Synchronize files directly between your devices. Need a private deployment setup? Contact KWAS Technologies at <span className="font-mono text-amber">support@kwas.tech</span>.
               </p>
             </div>
             <Link

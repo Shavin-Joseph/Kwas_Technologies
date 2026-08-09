@@ -22,7 +22,7 @@ export function CTA() {
           Build &amp; Ship With KWAS Technologies.
         </h2>
         <p className="mx-auto mt-4 max-w-md text-base text-muted">
-          Explore our privacy-first apps or get in touch for custom Web App Solutions at info@kwas.tech.
+          Explore our privacy-first apps or get in touch for custom Web App Solutions at support@kwas.tech.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link

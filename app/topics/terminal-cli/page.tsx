@@ -101,7 +101,7 @@ export default function TerminalCLITopicPage() {
                 Kwas Terminal — Native Android Shell
               </h3>
               <p className="mt-1 text-sm text-muted max-w-xl">
-                Run SSH, tmux, and CLI tools on Android. For custom developer toolchain inquiries, email KWAS Technologies at <span className="font-mono text-amber">info@kwas.tech</span>.
+                Run SSH, tmux, and CLI tools on Android. For custom developer toolchain inquiries, email KWAS Technologies at <span className="font-mono text-amber">support@kwas.tech</span>.
               </p>
             </div>
             <Link

@@ -555,7 +555,7 @@ export function Products() {
                   </>
                 ) : (
                   <a
-                    href="mailto:info@kwas.tech?subject=Beta%20Access%20Request"
+                    href="mailto:support@kwas.tech?subject=Beta%20Access%20Request"
                     className="flex flex-1 w-full items-center justify-center gap-1.5 rounded-xl border border-line bg-panel2 px-4 py-3 text-xs font-mono font-medium text-fg hover:border-amber/50"
                   >
                     Request Pre-Release Access

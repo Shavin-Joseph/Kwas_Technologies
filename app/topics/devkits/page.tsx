@@ -103,7 +103,7 @@ export default function DevKitsTopicPage() {
                 Kwas DevKit — CLI Scaffolding for Creators
               </h3>
               <p className="mt-1 text-sm text-muted max-w-xl">
-                Scaffold and ship projects effortlessly. Need custom developer toolchains or white-label build tools? Contact KWAS Tech at <span className="font-mono text-amber">info@kwas.tech</span>.
+                Scaffold and ship projects effortlessly. Need custom developer toolchains or white-label build tools? Contact KWAS Tech at <span className="font-mono text-amber">support@kwas.tech</span>.
               </p>
             </div>
             <Link

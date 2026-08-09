@@ -237,7 +237,7 @@ export function Navbar() {
             className="hidden xl:flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 font-mono text-xs font-medium text-fg transition-colors hover:border-amber/50 hover:text-amber shrink-0"
           >
             <Mail size={14} />
-            info@kwas.tech
+            support@kwas.tech
           </Link>
           <ThemeToggle />
         </div>
@@ -348,7 +348,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-2 text-sm font-medium text-amber hover:bg-panel"
               >
-                Contact Us (info@kwas.tech)
+                Contact Us (support@kwas.tech)
               </Link>
             </div>
           </motion.div>

@@ -109,7 +109,7 @@ export default function PwaBlogArticlePage() {
 
           <h2 className="font-display text-xl font-bold text-fg mt-4">3. Conclusion</h2>
           <p>
-            By leveraging PWAs, businesses reduce engineering overhead while serving users on any device. Contact KWAS Technologies at <a href="mailto:info@kwas.tech" className="text-amber hover:underline">info@kwas.tech</a> to discuss custom PWA architecture for your enterprise.
+            By leveraging PWAs, businesses reduce engineering overhead while serving users on any device. Contact KWAS Technologies at <a href="mailto:support@kwas.tech" className="text-amber hover:underline">support@kwas.tech</a> to discuss custom PWA architecture for your enterprise.
           </p>
         </div>
       </main>

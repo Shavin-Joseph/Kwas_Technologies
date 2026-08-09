@@ -24,7 +24,7 @@ const structuredData = [
     alternateName: ["Key Web App Solutions Technologies", "KWAS Tech", "Key Web App Solutions"],
     url: "https://kwas.tech",
     logo: "https://kwas.tech/icon.png",
-    email: "info@kwas.tech",
+    email: "support@kwas.tech",
     description:
       "KWAS Technologies (Key Web App Solutions Technologies) develops privacy-first web applications, custom web app solutions, Android tools, and self-hosted software.",
     sameAs: ["https://github.com/kwas-tech"],
@@ -136,7 +136,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-display text-lg font-semibold text-fg">Contact &amp; Mail</h3>
                 <p className="mt-2 text-sm text-muted">
-                  Send a message or reach us directly at <span className="font-mono text-xs text-amber">info@kwas.tech</span>.
+                  Send a message or reach us directly at <span className="font-mono text-xs text-amber">support@kwas.tech</span>.
                 </p>
               </div>
               <Link

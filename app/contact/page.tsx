@@ -4,13 +4,13 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us — info@kwas.tech",
+  title: "Contact Us — support@kwas.tech",
   description:
-    "Get in touch with KWAS Technologies (Key Web App Solutions Technologies). Send a message or email info@kwas.tech for custom web application solutions.",
+    "Get in touch with KWAS Technologies (Key Web App Solutions Technologies). Send a message or email support@kwas.tech for custom web application solutions.",
   keywords: [
     "Contact KWAS Technologies",
     "KWAS Tech Email",
-    "info@kwas.tech",
+    "support@kwas.tech",
     "Key Web App Solutions Contact",
     "KWAS Software Support",
   ],
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Us — KWAS Technologies",
     description:
-      "Contact KWAS Technologies for Key Web App Solutions, commercial licenses, or developer inquiries. Email: info@kwas.tech.",
+      "Contact KWAS Technologies for Key Web App Solutions, commercial licenses, or developer inquiries. Email: support@kwas.tech.",
     url: "https://kwas.tech/contact",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us — KWAS Technologies",
-    description: "Contact KWAS Technologies for custom web application solutions. Email: info@kwas.tech.",
+    description: "Contact KWAS Technologies for custom web application solutions. Email: support@kwas.tech.",
   },
 };
 
@@ -49,7 +49,7 @@ export default function ContactPage() {
         "mainEntity": {
           "@type": "Organization",
           "name": "KWAS Technologies (Key Web App Solutions Technologies)",
-          "email": "info@kwas.tech",
+          "email": "support@kwas.tech",
           "url": "https://kwas.tech",
         },
       },

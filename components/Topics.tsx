@@ -188,7 +188,7 @@ export function Topics() {
             Need a custom Web App or Software Solution?
           </h4>
           <p className="mt-1 text-sm text-muted max-w-2xl">
-            From web application architecture to native mobile tools, KWAS Technologies builds high-reliability software designed for performance, privacy, and speed. Contact us at <span className="font-mono text-amber">info@kwas.tech</span>.
+            From web application architecture to native mobile tools, KWAS Technologies builds high-reliability software designed for performance, privacy, and speed. Contact us at <span className="font-mono text-amber">support@kwas.tech</span>.
           </p>
         </div>
         <Link

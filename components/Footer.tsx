@@ -28,7 +28,8 @@ const COLUMNS = [
       { label: "About KWAS Tech", href: "/about" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms of Service", href: "/terms" },
-      { label: "Contact (info@kwas.tech)", href: "/contact" },
+      { label: "App Licenses", href: "/license" },
+      { label: "Contact (support@kwas.tech)", href: "/contact" },
     ],
   },
 ];
@@ -50,8 +51,8 @@ export function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               <a
-                href="mailto:info@kwas.tech"
-                aria-label="Email info@kwas.tech"
+                href="mailto:support@kwas.tech"
+                aria-label="Email support@kwas.tech"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-faint hover:text-amber"
               >
                 <Mail size={16} />
@@ -83,7 +84,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line/70 pt-6 font-mono text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} KWAS Technologies — Key Web App Solutions Technologies</span>
-          <span>info@kwas.tech</span>
+          <span>support@kwas.tech</span>
         </div>
       </div>
     </footer>

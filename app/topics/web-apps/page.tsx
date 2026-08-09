@@ -150,7 +150,7 @@ export default function WebAppsTopicPage() {
                 Need a Custom Web Application for your business?
               </h3>
               <p className="mt-1 text-sm text-muted max-w-xl">
-                Let KWAS Technologies build your next web platform with clean architecture, zero bloat, and top-tier performance. Contact us at <span className="font-mono text-amber">info@kwas.tech</span>.
+                Let KWAS Technologies build your next web platform with clean architecture, zero bloat, and top-tier performance. Contact us at <span className="font-mono text-amber">support@kwas.tech</span>.
               </p>
             </div>
             <Link
