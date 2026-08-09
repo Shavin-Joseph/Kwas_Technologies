@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare preview"
+    "deploy": "wrangler deploy",
+    "preview": "wrangler preview"
   },
   "dependencies": {
     "@firebase/analytics": "^0.10.22",
