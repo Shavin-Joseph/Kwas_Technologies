@@ -2,6 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "kwas-technologies",
   "compatibility_date": "2026-08-09",
+  "main": ".open-next/worker.js",
+  "assets": {
+    "directory": ".open-next/assets"
+  },
   "observability": {
     "enabled": true
   },
