@@ -30,6 +30,7 @@ const COLUMNS = [
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms & Conditions", href: "/terms" },
       { label: "App Licenses", href: "/license" },
+      { label: "Google Publisher Policies", href: "/publisher-policies" },
       { label: "Contact (support@kwas.tech)", href: "/contact" },
     ],
   },

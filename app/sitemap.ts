@@ -34,6 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/refund-policy",
     "/refund",
     "/return-policy",
+    "/publisher-policies",
+    "/google-policies",
   ];
 
   return routes.map((route) => ({
