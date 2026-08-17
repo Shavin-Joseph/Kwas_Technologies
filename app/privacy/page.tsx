@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     "Google Publisher Privacy Policy",
   ],
   alternates: {
-    canonical: "https://kwas.tech/privacy",
+    canonical: "https://www.kwas.tech/privacy",
   },
   openGraph: {
     title: "Privacy Policy — KWAS Technologies",
     description:
-      "Official Privacy Policy of KWAS Technologies (Key Web App Solutions Technologies). Privacy-first, zero-telemetry, and GDPR/PayHere compliant.",
-    url: "https://kwas.tech/privacy",
+      "Official Privacy Policy of KWAS Technologies. Privacy-first, zero-telemetry, and GDPR/PayHere compliant.",
+    url: "https://www.kwas.tech/privacy",
     type: "website",
   },
   twitter: {
@@ -40,18 +40,18 @@ export default function PrivacyPolicyPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://kwas.tech/privacy" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.kwas.tech/privacy" },
         ],
       },
       {
         "@type": "WebPage",
         "name": "Privacy Policy — KWAS Technologies",
-        "url": "https://kwas.tech/privacy",
+        "url": "https://www.kwas.tech/privacy",
         "publisher": {
           "@type": "Organization",
-          "name": "KWAS Technologies (Key Web App Solutions Technologies)",
-          "url": "https://kwas.tech",
+          "name": "KWAS Technologies",
+          "url": "https://www.kwas.tech",
           "email": "support@kwas.tech",
         },
       },
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <p>
               At <strong>KWAS Technologies (Key Web App Solutions Technologies)</strong>, accessible from{" "}
-              <a href="https://kwas.tech" className="text-amber hover:underline font-mono">https://kwas.tech</a>, one of our main priorities is protecting the privacy and security of our visitors, app users, and software clients. This Privacy Policy document outlines how we collect, use, process, and safeguard your personal information.
+              <a href="https://www.kwas.tech" className="text-amber hover:underline font-mono">https://www.kwas.tech</a>, one of our main priorities is protecting the privacy and security of our visitors, app users, and software clients. This Privacy Policy document outlines how we collect, use, process, and safeguard your personal information.
             </p>
             <p className="mt-3">
               We operate under strict privacy-first principles. Most of our free online utility tools run entirely client-side inside your browser session without uploading your files, images, text, or diagnostic data to any external server.

@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "KWAS Online Tools Terms",
   ],
   alternates: {
-    canonical: "https://kwas.tech/terms",
+    canonical: "https://www.kwas.tech/terms",
   },
   openGraph: {
     title: "Terms and Conditions — KWAS Technologies",
     description:
-      "Official Business Terms & Conditions for KWAS Technologies (Key Web App Solutions Technologies). Software licensing, digital product delivery, and PayHere order processing.",
-    url: "https://kwas.tech/terms",
+      "Official Business Terms & Conditions for KWAS Technologies. Software licensing, digital product delivery, and PayHere order processing.",
+    url: "https://www.kwas.tech/terms",
     type: "website",
   },
   twitter: {
@@ -39,18 +39,18 @@ export default function TermsOfServicePage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://kwas.tech/terms" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://www.kwas.tech/terms" },
         ],
       },
       {
         "@type": "WebPage",
         "name": "Terms and Conditions — KWAS Technologies",
-        "url": "https://kwas.tech/terms",
+        "url": "https://www.kwas.tech/terms",
         "publisher": {
           "@type": "Organization",
-          "name": "KWAS Technologies (Key Web App Solutions Technologies)",
-          "url": "https://kwas.tech",
+          "name": "KWAS Technologies",
+          "url": "https://www.kwas.tech",
           "email": "support@kwas.tech",
         },
       },
@@ -90,7 +90,7 @@ export default function TermsOfServicePage() {
             </div>
             <p>
               Welcome to <strong>KWAS Technologies (Key Web App Solutions Technologies)</strong>, accessible at{" "}
-              <a href="https://kwas.tech" className="text-amber hover:underline font-mono">https://kwas.tech</a>. These Terms and Conditions govern your access to and use of our website, web applications, free online utility tools, software downloads, digital licenses, and payment transactions.
+              <a href="https://www.kwas.tech" className="text-amber hover:underline font-mono">https://www.kwas.tech</a>. These Terms and Conditions govern your access to and use of our website, web applications, free online utility tools, software downloads, digital licenses, and payment transactions.
             </p>
             <ul className="mt-3 flex flex-col gap-2 list-disc pl-5">
               <li>You must be at least <strong>18 years old</strong> (or the legal age of majority in your jurisdiction) to make purchases or enter binding contracts with KWAS Technologies.</li>

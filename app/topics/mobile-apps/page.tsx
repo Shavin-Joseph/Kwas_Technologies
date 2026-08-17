@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Explore native Android launcher engines, custom home screen widgets, and mobile productivity tools from KWAS Technologies.",
   alternates: {
-    canonical: "https://kwas.tech/topics/mobile-apps",
+    canonical: "https://www.kwas.tech/topics/mobile-apps",
   },
   openGraph: {
     title: "Android & Mobile Apps — KWAS Technologies",
     description:
       "Native-level Android launchers, gesture engines, custom home screen widgets, and mobile productivity apps by KWAS Technologies.",
-    url: "https://kwas.tech/topics/mobile-apps",
+    url: "https://www.kwas.tech/topics/mobile-apps",
   },
 };
 

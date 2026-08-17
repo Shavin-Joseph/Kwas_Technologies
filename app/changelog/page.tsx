@@ -5,16 +5,16 @@ import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Changelog & Releases",
+  title: "Changelog & Releases — KWAS Technologies",
   description:
-    "Stay updated with the latest software updates, releases, features, and fixes from KWAS Technologies (Key Web App Solutions Technologies).",
+    "Track the latest software updates, releases, product improvements, and fixes across KWAS Technologies products.",
   alternates: {
-    canonical: "https://kwas.tech/changelog",
+    canonical: "https://www.kwas.tech/changelog",
   },
   openGraph: {
     title: "Changelog & Releases — KWAS Technologies",
-    description: "Track version history and new feature releases across all KWAS Technologies products.",
-    url: "https://kwas.tech/changelog",
+    description: "Track version history and feature updates across KWAS Technologies products.",
+    url: "https://www.kwas.tech/changelog",
   },
 };
 

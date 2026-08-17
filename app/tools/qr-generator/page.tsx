@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import { QrGeneratorTool } from "@/components/tools/QrGeneratorTool";
 
 export const metadata: Metadata = {
-  title: "Universal QR Code Generator — KWAS Technologies",
+  title: "Free QR Code Generator — Create QR Codes Online",
   description:
-    "Free online QR Code Generator. Create custom QR codes for website URLs, Wi-Fi networks, text, and contacts with custom colors and instant PNG download.",
+    "Generate QR codes for website URLs, Wi-Fi details, text, and contact data in seconds with a fast, privacy-first browser-based tool.",
   keywords: [
-    "QR Code Generator",
-    "WiFi QR Code Generator",
-    "Custom QR Code Maker",
-    "Free Vector QR Generator",
-    "KWAS Tech QR Generator",
+    "QR code generator",
+    "free QR code generator",
+    "Wi-Fi QR code generator",
+    "website QR code maker",
+    "contact QR code generator",
   ],
   alternates: {
-    canonical: "https://kwas.tech/tools/qr-generator",
+    canonical: "https://www.kwas.tech/tools/qr-generator",
   },
   openGraph: {
-    title: "Universal QR Code Generator — KWAS Technologies",
-    description: "Create custom QR codes for Wi-Fi, website URLs, text, and contacts.",
-    url: "https://kwas.tech/tools/qr-generator",
+    title: "Free QR Code Generator — Create QR Codes Online",
+    description: "Generate QR codes for URLs, text, Wi‑Fi, and contact details quickly and privately in your browser.",
+    url: "https://www.kwas.tech/tools/qr-generator",
     type: "website",
   },
 };
@@ -30,9 +30,9 @@ export default function QRCodeGeneratorPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://kwas.tech/tools" },
-          { "@type": "ListItem", "position": 3, "name": "QR Code Generator", "item": "https://kwas.tech/tools/qr-generator" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.kwas.tech/tools" },
+          { "@type": "ListItem", "position": 3, "name": "QR Code Generator", "item": "https://www.kwas.tech/tools/qr-generator" },
         ],
       },
       {

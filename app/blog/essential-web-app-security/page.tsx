@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "KWAS Technologies Security",
   ],
   alternates: {
-    canonical: "https://kwas.tech/blog/essential-web-app-security",
+    canonical: "https://www.kwas.tech/blog/essential-web-app-security",
   },
   openGraph: {
     title: "Essential Web Application Security: Zero-Telemetry & Offline Vaults — KWAS Tech Blog",
     description: "AES-256-GCM hardware key encryption and zero-knowledge credential vaulting.",
-    url: "https://kwas.tech/blog/essential-web-app-security",
+    url: "https://www.kwas.tech/blog/essential-web-app-security",
     type: "article",
   },
 };
@@ -33,9 +33,9 @@ export default function SecurityBlogArticlePage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://kwas.tech/blog" },
-          { "@type": "ListItem", "position": 3, "name": "Web App Security", "item": "https://kwas.tech/blog/essential-web-app-security" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://www.kwas.tech/blog" },
+          { "@type": "ListItem", "position": 3, "name": "Web App Security", "item": "https://www.kwas.tech/blog/essential-web-app-security" },
         ],
       },
       {
@@ -43,9 +43,9 @@ export default function SecurityBlogArticlePage() {
         "headline": "Essential Web Application Security: Zero-Telemetry & Offline Vaults",
         "description": "AES-256-GCM hardware key encryption and zero-knowledge credential vaulting.",
         "author": { "@type": "Organization", "name": "KWAS Tech Security" },
-        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://kwas.tech" },
+        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://www.kwas.tech" },
         "datePublished": "2026-08-01",
-        "url": "https://kwas.tech/blog/essential-web-app-security",
+        "url": "https://www.kwas.tech/blog/essential-web-app-security",
       },
     ],
   };

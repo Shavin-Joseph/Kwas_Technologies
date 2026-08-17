@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Explore self-hosted sync engines, point-to-point file sync, and private cloud relay nodes developed by KWAS Technologies.",
   alternates: {
-    canonical: "https://kwas.tech/topics/self-hosted",
+    canonical: "https://www.kwas.tech/topics/self-hosted",
   },
   openGraph: {
     title: "Self-Hosted Infrastructure — KWAS Technologies",
     description:
       "Point-to-point file sync, self-hosted relay servers, and private cloud solutions from KWAS Technologies.",
-    url: "https://kwas.tech/topics/self-hosted",
+    url: "https://www.kwas.tech/topics/self-hosted",
   },
 };
 

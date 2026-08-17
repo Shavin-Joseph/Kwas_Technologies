@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     "PayHere Approved Refund Policy",
   ],
   alternates: {
-    canonical: "https://kwas.tech/refund-policy",
+    canonical: "https://www.kwas.tech/refund-policy",
   },
   openGraph: {
     title: "Refund & Return Policy — KWAS Technologies",
     description:
       "Official Refund & Return Policy of KWAS Technologies (Key Web App Solutions Technologies). Digital product delivery, software licensing, and refund processing.",
-    url: "https://kwas.tech/refund-policy",
+    url: "https://www.kwas.tech/refund-policy",
     type: "website",
   },
   twitter: {
@@ -38,18 +38,18 @@ export default function RefundPolicyPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Refund Policy", "item": "https://kwas.tech/refund-policy" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Refund Policy", "item": "https://www.kwas.tech/refund-policy" },
         ],
       },
       {
         "@type": "WebPage",
         "name": "Refund & Return Policy — KWAS Technologies",
-        "url": "https://kwas.tech/refund-policy",
+        "url": "https://www.kwas.tech/refund-policy",
         "publisher": {
           "@type": "Organization",
           "name": "KWAS Technologies (Key Web App Solutions Technologies)",
-          "url": "https://kwas.tech",
+          "url": "https://www.kwas.tech",
           "email": "support@kwas.tech",
         },
       },
@@ -82,7 +82,7 @@ export default function RefundPolicyPage() {
         <div className="mt-8 rounded-xl border border-line bg-panel/50 p-6 leading-relaxed text-sm text-muted">
           <p>
             Thank you for choosing <strong>KWAS Technologies (Key Web App Solutions Technologies)</strong>, accessible at{" "}
-            <a href="https://kwas.tech" className="text-amber hover:underline font-mono">https://kwas.tech</a>. We value your business and strive to deliver state-of-the-art web application solutions, Android software tools, and digital developer services.
+            <a href="https://www.kwas.tech" className="text-amber hover:underline font-mono">https://www.kwas.tech</a>. We value your business and strive to deliver state-of-the-art web application solutions, Android software tools, and digital developer services.
           </p>
           <p className="mt-3">
             This Refund &amp; Return Policy outlines the conditions under which refunds, returns, exchanges, or cancellations are processed for our digital software products, application license keys, and commercial web development services.

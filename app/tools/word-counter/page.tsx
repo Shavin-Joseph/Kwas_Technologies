@@ -2,24 +2,23 @@ import type { Metadata } from "next";
 import { WordCounterTool } from "@/components/tools/WordCounterTool";
 
 export const metadata: Metadata = {
-  title: "Word & Character Counter + Text Analyzer — KWAS Technologies",
+  title: "Free Word Counter — Count Words, Characters & Reading Time",
   description:
-    "Free online Word Counter, Character Counter, and Sentence Analyzer with reading time calculator and social media character limit trackers.",
+    "Count words, characters, sentences, and reading time with a fast, browser-based text analyzer built for writing and editing workflows.",
   keywords: [
-    "Word Counter Online",
-    "Character Counter",
-    "Sentence Counter",
-    "Reading Time Calculator",
-    "Twitter Character Limit Counter",
-    "KWAS Tech Word Counter",
+    "word counter",
+    "character counter",
+    "reading time calculator",
+    "sentence counter",
+    "text analyzer",
   ],
   alternates: {
-    canonical: "https://kwas.tech/tools/word-counter",
+    canonical: "https://www.kwas.tech/tools/word-counter",
   },
   openGraph: {
-    title: "Word & Character Counter + Text Analyzer — KWAS Technologies",
-    description: "Count words, characters, sentences, reading time, and social media limits live.",
-    url: "https://kwas.tech/tools/word-counter",
+    title: "Free Word Counter — Count Words, Characters & Reading Time",
+    description: "Analyze text instantly to count words, characters, and reading time without leaving your browser.",
+    url: "https://www.kwas.tech/tools/word-counter",
     type: "website",
   },
 };
@@ -31,9 +30,9 @@ export default function WordCounterPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://kwas.tech/tools" },
-          { "@type": "ListItem", "position": 3, "name": "Word Counter", "item": "https://kwas.tech/tools/word-counter" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.kwas.tech/tools" },
+          { "@type": "ListItem", "position": 3, "name": "Word Counter", "item": "https://www.kwas.tech/tools/word-counter" },
         ],
       },
       {

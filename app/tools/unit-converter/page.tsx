@@ -2,23 +2,24 @@ import type { Metadata } from "next";
 import { UnitConverterTool } from "@/components/tools/UnitConverterTool";
 
 export const metadata: Metadata = {
-  title: "Universal Unit & Digital Storage Converter — KWAS Technologies",
+  title: "Free Unit Converter — Storage, Length, Mass & Temperature",
   description:
-    "Free online Unit & Digital Storage Converter. Convert MB to GB, length, mass, and temperature instantly.",
+    "Convert digital storage values, length, mass, and temperature instantly with a fast browser-based unit converter built for everyday tasks.",
   keywords: [
-    "MB to GB Converter",
-    "Digital Storage Converter",
-    "Unit Converter Online",
-    "Length Converter",
-    "KWAS Tech Unit Converter",
+    "unit converter",
+    "digital storage converter",
+    "MB to GB converter",
+    "length converter",
+    "mass converter",
+    "temperature converter",
   ],
   alternates: {
-    canonical: "https://kwas.tech/tools/unit-converter",
+    canonical: "https://www.kwas.tech/tools/unit-converter",
   },
   openGraph: {
-    title: "Universal Unit & Digital Storage Converter — KWAS Technologies",
-    description: "Convert digital storage sizes (MB, GB, TB), distance, mass, and temperature live.",
-    url: "https://kwas.tech/tools/unit-converter",
+    title: "Free Unit Converter — Storage, Length, Mass & Temperature",
+    description: "Convert storage units, length, mass, and temperature values instantly in your browser.",
+    url: "https://www.kwas.tech/tools/unit-converter",
     type: "website",
   },
 };
@@ -30,9 +31,9 @@ export default function UnitConverterPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://kwas.tech/tools" },
-          { "@type": "ListItem", "position": 3, "name": "Unit Converter", "item": "https://kwas.tech/tools/unit-converter" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.kwas.tech/tools" },
+          { "@type": "ListItem", "position": 3, "name": "Unit Converter", "item": "https://www.kwas.tech/tools/unit-converter" },
         ],
       },
       {

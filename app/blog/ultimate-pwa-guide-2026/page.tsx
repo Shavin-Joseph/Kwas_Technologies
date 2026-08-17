@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     "Key Web App Solutions PWA",
   ],
   alternates: {
-    canonical: "https://kwas.tech/blog/ultimate-pwa-guide-2026",
+    canonical: "https://www.kwas.tech/blog/ultimate-pwa-guide-2026",
   },
   openGraph: {
     title: "The Ultimate 2026 Guide to Progressive Web Applications (PWAs) — KWAS Tech Blog",
     description: "Architecting instant-loading, offline-capable PWAs with Next.js 14, Service Workers, and client storage.",
-    url: "https://kwas.tech/blog/ultimate-pwa-guide-2026",
+    url: "https://www.kwas.tech/blog/ultimate-pwa-guide-2026",
     type: "article",
   },
   twitter: {
@@ -42,9 +42,9 @@ export default function UltimatePwaGuidePage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://kwas.tech/blog" },
-          { "@type": "ListItem", "position": 3, "name": "Ultimate PWA Guide 2026", "item": "https://kwas.tech/blog/ultimate-pwa-guide-2026" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://www.kwas.tech/blog" },
+          { "@type": "ListItem", "position": 3, "name": "Ultimate PWA Guide 2026", "item": "https://www.kwas.tech/blog/ultimate-pwa-guide-2026" },
         ],
       },
       {
@@ -52,9 +52,9 @@ export default function UltimatePwaGuidePage() {
         "headline": "The Ultimate 2026 Guide to Progressive Web Applications (PWAs): Architecture, Offline Performance, and Enterprise Scaling",
         "description": "Comprehensive 2,500+ word technical guide into Progressive Web Applications (PWAs) using Next.js 14.",
         "author": { "@type": "Organization", "name": "KWAS Technologies Engineering Team" },
-        "publisher": { "@type": "Organization", "name": "KWAS Technologies (Key Web App Solutions Technologies)", "url": "https://kwas.tech" },
+        "publisher": { "@type": "Organization", "name": "KWAS Technologies (Key Web App Solutions Technologies)", "url": "https://www.kwas.tech" },
         "datePublished": "2026-08-07",
-        "url": "https://kwas.tech/blog/ultimate-pwa-guide-2026",
+        "url": "https://www.kwas.tech/blog/ultimate-pwa-guide-2026",
       },
       {
         "@type": "FAQPage",

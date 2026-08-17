@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     "Google Privacy Disclosures KWAS",
   ],
   alternates: {
-    canonical: "https://kwas.tech/publisher-policies",
+    canonical: "https://www.kwas.tech/publisher-policies",
   },
   openGraph: {
     title: "Google Publisher Policies Compliance — KWAS Technologies",
     description:
       "Official Google Publisher Policy Compliance statement for KWAS Technologies. Full adherence to Content, Behavioral, Privacy, and Better Ads Standards.",
-    url: "https://kwas.tech/publisher-policies",
+    url: "https://www.kwas.tech/publisher-policies",
     type: "website",
   },
   twitter: {
@@ -39,18 +39,18 @@ export default function PublisherPoliciesPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Google Publisher Policies", "item": "https://kwas.tech/publisher-policies" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Google Publisher Policies", "item": "https://www.kwas.tech/publisher-policies" },
         ],
       },
       {
         "@type": "WebPage",
         "name": "Google Publisher Policies Compliance — KWAS Technologies",
-        "url": "https://kwas.tech/publisher-policies",
+        "url": "https://www.kwas.tech/publisher-policies",
         "publisher": {
           "@type": "Organization",
           "name": "KWAS Technologies (Key Web App Solutions Technologies)",
-          "url": "https://kwas.tech",
+          "url": "https://www.kwas.tech",
           "email": "support@kwas.tech",
         },
       },
@@ -83,7 +83,7 @@ export default function PublisherPoliciesPage() {
         <div className="mt-8 rounded-xl border border-line bg-panel/50 p-6 leading-relaxed text-sm text-muted">
           <p>
             At <strong>KWAS Technologies (Key Web App Solutions Technologies)</strong>, accessible at{" "}
-            <a href="https://kwas.tech" className="text-amber hover:underline font-mono">https://kwas.tech</a>, we maintain strict compliance with all{" "}
+            <a href="https://www.kwas.tech" className="text-amber hover:underline font-mono">https://www.kwas.tech</a>, we maintain strict compliance with all{" "}
             <a
               href="https://support.google.com/publisherpolicies"
               target="_blank"

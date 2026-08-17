@@ -27,21 +27,21 @@ export const metadata: Metadata = {
     "Kwas DevKit",
   ],
   alternates: {
-    canonical: "https://kwas.tech/products",
+    canonical: "https://www.kwas.tech/products",
   },
   openGraph: {
     title: "Products & Apps Downloads — KWAS Technologies",
     description:
       "Explore KWAS SysLens (v1.0.0) system diagnostics APK and privacy-first software built by KWAS Technologies.",
-    url: "https://kwas.tech/products",
-    images: [{ url: "https://kwas.tech/images/kwas-syslens-icon.png", alt: "KWAS Software Hub" }],
+    url: "https://www.kwas.tech/products",
+    images: [{ url: "https://www.kwas.tech/images/kwas-syslens-icon.png", alt: "KWAS Software Hub" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Products & Apps Downloads — KWAS Technologies",
     description: "Download KWAS SysLens APK & privacy-first software from KWAS Technologies.",
-    images: ["https://kwas.tech/images/kwas-syslens-icon.png"],
+    images: ["https://www.kwas.tech/images/kwas-syslens-icon.png"],
   },
 };
 
@@ -52,18 +52,18 @@ export default function ProductsPage() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://kwas.tech" },
-          { "@type": "ListItem", position: 2, name: "Products & Apps", item: "https://kwas.tech/products" },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kwas.tech" },
+          { "@type": "ListItem", position: 2, name: "Products & Apps", item: "https://www.kwas.tech/products" },
         ],
       },
       {
         "@type": "CollectionPage",
         name: "KWAS Technologies Software Downloads",
-        url: "https://kwas.tech/products",
+        url: "https://www.kwas.tech/products",
         publisher: {
           "@type": "Organization",
-          name: "KWAS Technologies (Key Web App Solutions Technologies)",
-          url: "https://kwas.tech",
+          name: "KWAS Technologies",
+          url: "https://www.kwas.tech",
         },
         hasPart: [
           {
@@ -72,8 +72,8 @@ export default function ProductsPage() {
             softwareVersion: "v1.0.0",
             operatingSystem: "Android 7.0+",
             applicationCategory: "UtilitiesApplication",
-            url: "https://kwas.tech/products/kwas-syslens",
-            downloadUrl: "https://kwas.tech/downloads/kwas-syslens-v1.0.0.apk",
+            url: "https://www.kwas.tech/products/kwas-syslens",
+            downloadUrl: "https://www.kwas.tech/downloads/kwas-syslens-v1.0.0.apk",
           },
         ],
       },

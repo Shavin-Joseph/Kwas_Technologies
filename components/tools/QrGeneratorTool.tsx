@@ -10,7 +10,7 @@ type QRType = "url" | "text" | "wifi" | "email" | "phone";
 
 export function QrGeneratorTool() {
   const [type, setType] = useState<QRType>("url");
-  const [textValue, setTextValue] = useState("https://kwas.tech");
+  const [textValue, setTextValue] = useState("https://www.kwas.tech");
   const [wifiSsid, setWifiSsid] = useState("");
   const [wifiPassword, setWifiPassword] = useState("");
   const [fgColor, setFgColor] = useState("121814");
@@ -27,7 +27,7 @@ export function QrGeneratorTool() {
     if (type === "phone") {
       return `tel:${textValue}`;
     }
-    return textValue || "https://kwas.tech";
+    return textValue || "https://www.kwas.tech";
   };
 
   const payload = getPayload();
@@ -77,7 +77,7 @@ export function QrGeneratorTool() {
                     key={item.id}
                     onClick={() => {
                       setType(item.id as QRType);
-                      if (item.id === "url") setTextValue("https://kwas.tech");
+                      if (item.id === "url") setTextValue("https://www.kwas.tech");
                       if (item.id === "email") setTextValue("support@kwas.tech");
                       if (item.id === "phone") setTextValue("+1234567890");
                     }}

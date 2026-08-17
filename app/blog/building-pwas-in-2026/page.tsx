@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     "Offline Web Apps",
   ],
   alternates: {
-    canonical: "https://kwas.tech/blog/building-pwas-in-2026",
+    canonical: "https://www.kwas.tech/blog/building-pwas-in-2026",
   },
   openGraph: {
     title: "Building High-Performance Progressive Web Apps (PWAs) in 2026 — KWAS Tech Blog",
     description: "Architecting instant-loading, offline-capable PWAs with Next.js 14 and Web APIs.",
-    url: "https://kwas.tech/blog/building-pwas-in-2026",
+    url: "https://www.kwas.tech/blog/building-pwas-in-2026",
     type: "article",
   },
 };
@@ -34,9 +34,9 @@ export default function PwaBlogArticlePage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://kwas.tech/blog" },
-          { "@type": "ListItem", "position": 3, "name": "Building PWAs in 2026", "item": "https://kwas.tech/blog/building-pwas-in-2026" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://www.kwas.tech/blog" },
+          { "@type": "ListItem", "position": 3, "name": "Building PWAs in 2026", "item": "https://www.kwas.tech/blog/building-pwas-in-2026" },
         ],
       },
       {
@@ -44,9 +44,9 @@ export default function PwaBlogArticlePage() {
         "headline": "Building High-Performance Progressive Web Apps (PWAs) in 2026",
         "description": "Learn how to build instant-loading, offline-capable Progressive Web Applications with Next.js 14.",
         "author": { "@type": "Organization", "name": "KWAS Technologies Engineering Team" },
-        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://kwas.tech" },
+        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://www.kwas.tech" },
         "datePublished": "2026-08-01",
-        "url": "https://kwas.tech/blog/building-pwas-in-2026",
+        "url": "https://www.kwas.tech/blog/building-pwas-in-2026",
       },
     ],
   };

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Explore privacy-first software, zero-telemetry architectures, and encrypted credential vaults engineered by KWAS Technologies.",
   alternates: {
-    canonical: "https://kwas.tech/topics/privacy-security",
+    canonical: "https://www.kwas.tech/topics/privacy-security",
   },
   openGraph: {
     title: "Privacy & Security — KWAS Technologies",
     description:
       "Zero-telemetry architectures, local-first encrypted vaults, biometric unlock, and security tools by KWAS Technologies.",
-    url: "https://kwas.tech/topics/privacy-security",
+    url: "https://www.kwas.tech/topics/privacy-security",
   },
 };
 

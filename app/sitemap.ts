@@ -1,9 +1,13 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kwas.tech";
+  const baseUrl = "https://www.kwas.tech";
   const routes = [
     "",
+    "/about",
+    "/contact",
+    "/privacy",
+    "/terms",
     "/products",
     "/products/kwas-syslens",
     "/tools",
@@ -25,11 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/topics/self-hosted",
     "/topics/terminal-cli",
     "/topics/devkits",
-    "/about",
     "/changelog",
-    "/contact",
-    "/privacy",
-    "/terms",
     "/license",
     "/refund-policy",
     "/refund",
@@ -41,11 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === "" || route.startsWith("/tools") || route === "/products/kwas-syslens" ? "daily" : "weekly",
+    changeFrequency: route === "" || route.startsWith("/tools") || route === "/products/kwas-syslens" ? "weekly" : "monthly",
     priority:
-      route === "" || route === "/products/kwas-syslens"
+      route === ""
         ? 1.0
-        : route === "/products"
+        : route === "/products/kwas-syslens"
         ? 0.95
         : route.startsWith("/tools")
         ? 0.9

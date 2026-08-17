@@ -16,12 +16,12 @@ export const metadata: Metadata = {
     "KWAS Technologies Cloud",
   ],
   alternates: {
-    canonical: "https://kwas.tech/blog/why-self-hosted-data-beats-cloud",
+    canonical: "https://www.kwas.tech/blog/why-self-hosted-data-beats-cloud",
   },
   openGraph: {
     title: "Why Self-Hosted Data Storage Beats Third-Party Cloud Lock-in — KWAS Tech Blog",
     description: "Discover the security and privacy advantages of peer-to-peer self-hosted data sync.",
-    url: "https://kwas.tech/blog/why-self-hosted-data-beats-cloud",
+    url: "https://www.kwas.tech/blog/why-self-hosted-data-beats-cloud",
     type: "article",
   },
 };
@@ -33,9 +33,9 @@ export default function SelfHostedBlogArticlePage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://kwas.tech/blog" },
-          { "@type": "ListItem", "position": 3, "name": "Self-Hosted vs Cloud", "item": "https://kwas.tech/blog/why-self-hosted-data-beats-cloud" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://www.kwas.tech/blog" },
+          { "@type": "ListItem", "position": 3, "name": "Self-Hosted vs Cloud", "item": "https://www.kwas.tech/blog/why-self-hosted-data-beats-cloud" },
         ],
       },
       {
@@ -43,9 +43,9 @@ export default function SelfHostedBlogArticlePage() {
         "headline": "Why Self-Hosted Data Storage Beats Third-Party Cloud Lock-in",
         "description": "Discover the security, cost, and privacy advantages of self-hosted cloud data sync.",
         "author": { "@type": "Organization", "name": "KWAS Security Lab" },
-        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://kwas.tech" },
+        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://www.kwas.tech" },
         "datePublished": "2026-08-01",
-        "url": "https://kwas.tech/blog/why-self-hosted-data-beats-cloud",
+        "url": "https://www.kwas.tech/blog/why-self-hosted-data-beats-cloud",
       },
     ],
   };

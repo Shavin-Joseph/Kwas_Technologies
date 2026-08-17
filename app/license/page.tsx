@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     "MIT License KWAS",
   ],
   alternates: {
-    canonical: "https://kwas.tech/license",
+    canonical: "https://www.kwas.tech/license",
   },
   openGraph: {
     title: "App Licenses — KWAS Technologies",
     description:
       "Official license terms for KWAS Technologies published apps. Free, open-source, and commercial licensing explained.",
-    url: "https://kwas.tech/license",
+    url: "https://www.kwas.tech/license",
     type: "website",
   },
   twitter: {
@@ -229,18 +229,18 @@ export default function LicensePage() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://kwas.tech" },
-          { "@type": "ListItem", position: 2, name: "License", item: "https://kwas.tech/license" },
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.kwas.tech" },
+          { "@type": "ListItem", position: 2, name: "License", item: "https://www.kwas.tech/license" },
         ],
       },
       {
         "@type": "WebPage",
         name: "App Licenses — KWAS Technologies",
-        url: "https://kwas.tech/license",
+        url: "https://www.kwas.tech/license",
         publisher: {
           "@type": "Organization",
           name: "KWAS Technologies (Key Web App Solutions Technologies)",
-          url: "https://kwas.tech",
+          url: "https://www.kwas.tech",
           email: "support@kwas.tech",
         },
       },
@@ -424,7 +424,7 @@ export default function LicensePage() {
 
 Copyright (c) 2026 KWAS Technologies
 (Key Web App Solutions Technologies)
-https://kwas.tech
+https://www.kwas.tech
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

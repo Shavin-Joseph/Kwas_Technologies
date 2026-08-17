@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
  * to trigger immediate crawling of updated sitemaps & new tool pages.
  */
 export async function GET() {
-  const sitemapUrl = "https://kwas.tech/sitemap.xml";
+  const sitemapUrl = "https://www.kwas.tech/sitemap.xml";
   const results: Record<string, string> = {};
 
   try {

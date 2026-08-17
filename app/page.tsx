@@ -8,11 +8,11 @@ import { Footer } from "@/components/Footer";
 import { ArrowRight, Globe, Smartphone, ShieldCheck, Terminal, Mail } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "KWAS Technologies — Key Web App Solutions & Developer Tools",
+  title: "KWAS Technologies — Privacy-First Web Apps & Developer Tools",
   description:
-    "KWAS Technologies (Key Web App Solutions Technologies) builds privacy-first web applications, custom web app solutions, Android tools, and self-hosted software.",
+    "KWAS Technologies builds privacy-first web apps, developer tools, and self-hosted software for people who value control, speed, and simplicity.",
   alternates: {
-    canonical: "https://kwas.tech",
+    canonical: "https://www.kwas.tech",
   },
 };
 
@@ -21,22 +21,22 @@ const structuredData = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "KWAS Technologies",
-    alternateName: ["Key Web App Solutions Technologies", "KWAS Tech", "Key Web App Solutions"],
-    url: "https://kwas.tech",
-    logo: "https://kwas.tech/icon.png",
+    alternateName: ["Key Web App Solutions Technologies", "KWAS Tech"],
+    url: "https://www.kwas.tech",
+    logo: "https://www.kwas.tech/icon.png",
     email: "support@kwas.tech",
     description:
-      "KWAS Technologies (Key Web App Solutions Technologies) develops privacy-first web applications, custom web app solutions, Android tools, and self-hosted software.",
+      "KWAS Technologies builds privacy-first web applications, developer tools, and self-hosted software for modern teams and independent creators.",
     sameAs: ["https://github.com/kwas-tech"],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "KWAS Technologies (Key Web App Solutions Technologies)",
-    alternateName: "KWAS Technologies",
-    url: "https://kwas.tech",
+    name: "KWAS Technologies",
+    alternateName: "Key Web App Solutions Technologies",
+    url: "https://www.kwas.tech",
     description:
-      "Official website and software hub for KWAS Technologies (Key Web App Solutions Technologies).",
+      "Official website for KWAS Technologies, featuring privacy-first web apps, developer tools, and self-hosted software.",
     publisher: {
       "@type": "Organization",
       name: "KWAS Technologies",

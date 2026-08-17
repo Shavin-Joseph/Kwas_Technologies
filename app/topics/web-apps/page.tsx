@@ -8,23 +8,22 @@ import { Globe, Code2, CheckCircle2, Mail, Sparkles } from "lucide-react";
 export const metadata: Metadata = {
   title: "Key Web App Solutions — Custom Web Application Development",
   description:
-    "Explore Key Web App Solutions by KWAS Technologies: custom Progressive Web Apps (PWAs), Next.js platforms, responsive dashboards, and enterprise web solutions.",
+    "Explore Key Web App Solutions by KWAS Technologies: custom Progressive Web Apps, Next.js platforms, responsive dashboards, and scalable enterprise web software.",
   keywords: [
     "Key Web App Solutions",
-    "KWAS Web Applications",
-    "Custom Web App Development",
-    "Next.js Web Solutions",
-    "PWA Development",
-    "KWAS Technologies Web Apps",
+    "custom web app development",
+    "Next.js web applications",
+    "PWA development",
+    "enterprise web solutions",
   ],
   alternates: {
-    canonical: "https://kwas.tech/topics/web-apps",
+    canonical: "https://www.kwas.tech/topics/web-apps",
   },
   openGraph: {
     title: "Key Web App Solutions — KWAS Technologies",
     description:
-      "Custom web application development, Next.js architecture, and PWA solutions from KWAS Technologies (Key Web App Solutions Technologies).",
-    url: "https://kwas.tech/topics/web-apps",
+      "Custom web application development, Next.js architecture, and progressive web solutions from KWAS Technologies.",
+    url: "https://www.kwas.tech/topics/web-apps",
     type: "article",
   },
   twitter: {
@@ -64,9 +63,9 @@ export default function WebAppsTopicPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Topics & Solutions", "item": "https://kwas.tech/topics" },
-          { "@type": "ListItem", "position": 3, "name": "Key Web App Solutions", "item": "https://kwas.tech/topics/web-apps" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Topics & Solutions", "item": "https://www.kwas.tech/topics" },
+          { "@type": "ListItem", "position": 3, "name": "Key Web App Solutions", "item": "https://www.kwas.tech/topics/web-apps" },
         ],
       },
       {
@@ -74,8 +73,8 @@ export default function WebAppsTopicPage() {
         "name": "Key Web App Solutions Development",
         "provider": {
           "@type": "Organization",
-          "name": "KWAS Technologies (Key Web App Solutions Technologies)",
-          "url": "https://kwas.tech",
+          "name": "KWAS Technologies",
+          "url": "https://www.kwas.tech",
         },
         "areaServed": "Global",
         "description": "Custom web application development, Next.js architecture, and Progressive Web Apps by KWAS Technologies.",

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Explore developer toolchains, CLI scaffolding kits, automated build tools, and signing utilities from KWAS Technologies.",
   alternates: {
-    canonical: "https://kwas.tech/topics/devkits",
+    canonical: "https://www.kwas.tech/topics/devkits",
   },
   openGraph: {
     title: "DevKits & Toolchains — KWAS Technologies",
     description:
       "CLI scaffolding kits, automated build pipelines, code signing utilities, and rapid developer tools by KWAS Technologies.",
-    url: "https://kwas.tech/topics/devkits",
+    url: "https://www.kwas.tech/topics/devkits",
   },
 };
 

@@ -2,30 +2,30 @@ import type { Metadata } from "next";
 import { SpeedTestTool } from "@/components/tools/SpeedTestTool";
 
 export const metadata: Metadata = {
-  title: "Real Internet Speed Test & Ping Analyzer — KWAS Technologies",
+  title: "Internet Speed Test — Check Download, Upload & Ping",
   description:
-    "100% Real Network Speed Test & Ping Analyzer by KWAS Technologies. Measure your actual Wi-Fi or cellular download speed, upload speed, ping, and latency in real-time.",
+    "Measure your real-world internet speed, upload rate, ping, and latency in your browser with KWAS’s fast, privacy-first speed test.",
   keywords: [
-    "Real Internet Speed Test",
-    "WiFi Speed Test Real",
-    "Ping Latency Test",
-    "Bandwidth Speedometer Online",
-    "Accurate Speed Test KWAS",
-    "Network Jitter Tester",
+    "internet speed test",
+    "download speed test",
+    "upload speed test",
+    "ping test",
+    "latency test",
+    "Wi‑Fi speed test",
   ],
   alternates: {
-    canonical: "https://kwas.tech/tools/speed-test",
+    canonical: "https://www.kwas.tech/tools/speed-test",
   },
   openGraph: {
-    title: "Real Internet Speed Test & Ping Analyzer — KWAS Technologies",
-    description: "Measure your actual Wi-Fi or broadband download speed, upload speed, and ping in real-time.",
-    url: "https://kwas.tech/tools/speed-test",
+    title: "Internet Speed Test — Check Download, Upload & Ping",
+    description: "Test your internet speed, upload rate, ping, and latency in real time with a browser-based speed test.",
+    url: "https://www.kwas.tech/tools/speed-test",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Internet Speed Test & Ping Analyzer — KWAS Technologies",
-    description: "Accurate real-network speed test measuring download, upload, ping, and jitter.",
+    title: "Internet Speed Test — Check Download, Upload & Ping",
+    description: "Measure your real-world internet speed, ping, and latency in your browser.",
   },
 };
 
@@ -36,9 +36,9 @@ export default function SpeedTestPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://kwas.tech/tools" },
-          { "@type": "ListItem", "position": 3, "name": "Speed Test", "item": "https://kwas.tech/tools/speed-test" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Free Tools", "item": "https://www.kwas.tech/tools" },
+          { "@type": "ListItem", "position": 3, "name": "Speed Test", "item": "https://www.kwas.tech/tools/speed-test" },
         ],
       },
       {

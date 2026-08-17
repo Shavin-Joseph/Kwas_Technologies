@@ -5,17 +5,17 @@ import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "About & Open Source",
+  title: "About KWAS Technologies — Privacy-First Web Apps & Open Source",
   description:
-    "Learn about KWAS Technologies (Key Web App Solutions Technologies), our privacy-first philosophy, open-source principles, and engineering values.",
+    "Learn what KWAS Technologies builds, how it approaches privacy-first software, and why its tools are designed for speed, ownership, and independence.",
   alternates: {
-    canonical: "https://kwas.tech/about",
+    canonical: "https://www.kwas.tech/about",
   },
   openGraph: {
-    title: "About & Open Source — KWAS Technologies",
+    title: "About KWAS Technologies — Privacy-First Web Apps & Open Source",
     description:
-      "Built the way we'd want to use it: free by default, source-available, zero-telemetry, and native-first software.",
-    url: "https://kwas.tech/about",
+      "Built the way we’d want to use it: privacy-first, source-aware, and designed for real-world control and simplicity.",
+    url: "https://www.kwas.tech/about",
   },
 };
 

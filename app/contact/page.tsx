@@ -4,30 +4,30 @@ import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contact Us — support@kwas.tech",
+  title: "Contact KWAS Technologies — Support & Inquiries",
   description:
-    "Get in touch with KWAS Technologies (Key Web App Solutions Technologies). Send a message or email support@kwas.tech for custom web application solutions.",
+    "Contact KWAS Technologies for web app projects, custom software inquiries, support, and technical questions by email.",
   keywords: [
     "Contact KWAS Technologies",
-    "KWAS Tech Email",
+    "KWAS support",
     "support@kwas.tech",
-    "Key Web App Solutions Contact",
-    "KWAS Software Support",
+    "custom web app inquiry",
+    "software support",
   ],
   alternates: {
-    canonical: "https://kwas.tech/contact",
+    canonical: "https://www.kwas.tech/contact",
   },
   openGraph: {
-    title: "Contact Us — KWAS Technologies",
+    title: "Contact KWAS Technologies — Support & Inquiries",
     description:
-      "Contact KWAS Technologies for Key Web App Solutions, commercial licenses, or developer inquiries. Email: support@kwas.tech.",
-    url: "https://kwas.tech/contact",
+      "Reach KWAS Technologies for custom web app projects, developer tools, privacy-first solutions, and support.",
+    url: "https://www.kwas.tech/contact",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us — KWAS Technologies",
-    description: "Contact KWAS Technologies for custom web application solutions. Email: support@kwas.tech.",
+    title: "Contact KWAS Technologies — Support & Inquiries",
+    description: "Reach KWAS Technologies for support, custom projects, and technical questions.",
   },
 };
 
@@ -38,19 +38,19 @@ export default function ContactPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://kwas.tech/contact" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://www.kwas.tech/contact" },
         ],
       },
       {
         "@type": "ContactPage",
         "name": "Contact KWAS Technologies",
-        "url": "https://kwas.tech/contact",
+        "url": "https://www.kwas.tech/contact",
         "mainEntity": {
           "@type": "Organization",
           "name": "KWAS Technologies (Key Web App Solutions Technologies)",
           "email": "support@kwas.tech",
-          "url": "https://kwas.tech",
+          "url": "https://www.kwas.tech",
         },
       },
     ],

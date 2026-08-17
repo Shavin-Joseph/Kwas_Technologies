@@ -41,17 +41,17 @@ export const metadata: Metadata = {
     "partition block filesystem table android",
   ],
   alternates: {
-    canonical: "https://kwas.tech/products/kwas-syslens",
+    canonical: "https://www.kwas.tech/products/kwas-syslens",
   },
   openGraph: {
     title: "KWAS SysLens (v1.0.0) — Extreme Android System Diagnostics",
     description:
       "Surface low-level Android hardware metrics, CPU load averages, Linux kernel /proc interfaces, and network RSSI signals with 100% offline privacy.",
-    url: "https://kwas.tech/products/kwas-syslens",
+    url: "https://www.kwas.tech/products/kwas-syslens",
     siteName: "KWAS Technologies",
     images: [
       {
-        url: "https://kwas.tech/images/kwas-syslens-icon.png",
+        url: "https://www.kwas.tech/images/kwas-syslens-icon.png",
         width: 1024,
         height: 1024,
         alt: "KWAS SysLens App Logo",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "KWAS SysLens (v1.0.0) — Android System Diagnostics",
     description:
       "Download KWAS SysLens APK. Extreme hardware transparency & Linux kernel /proc metrics for Android devices.",
-    images: ["https://kwas.tech/images/kwas-syslens-icon.png"],
+    images: ["https://www.kwas.tech/images/kwas-syslens-icon.png"],
   },
 };
 
@@ -78,7 +78,7 @@ export default function KwasSysLensPage() {
     applicationCategory: "UtilitiesApplication",
     softwareVersion: "v1.0.0",
     fileSize: "8.4 MB",
-    downloadUrl: "https://kwas.tech/downloads/kwas-syslens-v1.0.0.apk",
+    downloadUrl: "https://www.kwas.tech/downloads/kwas-syslens-v1.0.0.apk",
     installUrl: "https://github.com/Shavin-Joseph/Sys_Info/releases/tag/v1.0.0",
     offers: {
       "@type": "Offer",
@@ -95,7 +95,7 @@ export default function KwasSysLensPage() {
     author: {
       "@type": "Organization",
       name: "KWAS Technologies (Key Web App Solutions Technologies)",
-      url: "https://kwas.tech",
+      url: "https://www.kwas.tech",
     },
     description:
       "KWAS SysLens is a professional-grade, ultra-transparent system diagnostics tool developed by KWAS Technologies for Android. Designed with a classic Swiss-style aesthetic, it surfaces low-level hardware parameters and Linux kernel /proc metrics.",
@@ -134,7 +134,7 @@ export default function KwasSysLensPage() {
         name: "Where can I download the official KWAS SysLens APK?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can download the compiled APK binary (v1.0.0) directly from KWAS Technologies at https://kwas.tech/products or from the official GitHub release page at https://github.com/Shavin-Joseph/Sys_Info/releases/tag/v1.0.0.",
+          text: "You can download the compiled APK binary (v1.0.0) directly from KWAS Technologies at https://www.kwas.tech/products or from the official GitHub release page at https://github.com/Shavin-Joseph/Sys_Info/releases/tag/v1.0.0.",
         },
       },
     ],
@@ -148,19 +148,19 @@ export default function KwasSysLensPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://kwas.tech",
+        item: "https://www.kwas.tech",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Products",
-        item: "https://kwas.tech/products",
+        item: "https://www.kwas.tech/products",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: "KWAS SysLens",
-        item: "https://kwas.tech/products/kwas-syslens",
+        item: "https://www.kwas.tech/products/kwas-syslens",
       },
     ],
   };

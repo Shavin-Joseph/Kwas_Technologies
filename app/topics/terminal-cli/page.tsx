@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     "Explore native mobile terminal emulators, saved SSH profiles, tmux integration, and CLI utilities developed by KWAS Technologies.",
   alternates: {
-    canonical: "https://kwas.tech/topics/terminal-cli",
+    canonical: "https://www.kwas.tech/topics/terminal-cli",
   },
   openGraph: {
     title: "Developer Shell & CLI — KWAS Technologies",
     description:
       "Native mobile terminal emulators, SSH profile managers, tmux integration, and package management by KWAS Technologies.",
-    url: "https://kwas.tech/topics/terminal-cli",
+    url: "https://www.kwas.tech/topics/terminal-cli",
   },
 };
 

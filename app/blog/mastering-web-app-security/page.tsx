@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     "Key Web App Solutions Security",
   ],
   alternates: {
-    canonical: "https://kwas.tech/blog/mastering-web-app-security",
+    canonical: "https://www.kwas.tech/blog/mastering-web-app-security",
   },
   openGraph: {
     title: "Mastering Web Application Security & Zero-Knowledge Architecture — KWAS Tech Blog",
     description: "AES-256-GCM encryption, zero-knowledge credential vaulting, and privacy standards.",
-    url: "https://kwas.tech/blog/mastering-web-app-security",
+    url: "https://www.kwas.tech/blog/mastering-web-app-security",
     type: "article",
   },
   twitter: {
@@ -42,9 +42,9 @@ export default function MasteringSecurityBlogPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://kwas.tech/blog" },
-          { "@type": "ListItem", "position": 3, "name": "Mastering Web Security", "item": "https://kwas.tech/blog/mastering-web-app-security" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Tech Blog", "item": "https://www.kwas.tech/blog" },
+          { "@type": "ListItem", "position": 3, "name": "Mastering Web Security", "item": "https://www.kwas.tech/blog/mastering-web-app-security" },
         ],
       },
       {
@@ -52,9 +52,9 @@ export default function MasteringSecurityBlogPage() {
         "headline": "Mastering Web Application Security & Zero-Knowledge Architecture: Cryptographic Vaults and Privacy Standards",
         "description": "Comprehensive 2,500+ word technical guide on web cryptography, zero-knowledge vaulting, and privacy engineering.",
         "author": { "@type": "Organization", "name": "KWAS Security Lab" },
-        "publisher": { "@type": "Organization", "name": "KWAS Technologies (Key Web App Solutions Technologies)", "url": "https://kwas.tech" },
+        "publisher": { "@type": "Organization", "name": "KWAS Technologies", "url": "https://www.kwas.tech" },
         "datePublished": "2026-08-07",
-        "url": "https://kwas.tech/blog/mastering-web-app-security",
+        "url": "https://www.kwas.tech/blog/mastering-web-app-security",
       },
       {
         "@type": "FAQPage",

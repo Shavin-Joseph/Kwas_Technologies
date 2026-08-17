@@ -5,27 +5,25 @@ import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Topics & Solutions Hub",
+  title: "Topics & Solutions Hub — KWAS Technologies",
   description:
-    "Discover core engineering domains and custom web app solutions provided by KWAS Technologies (Key Web App Solutions Technologies).",
+    "Explore core engineering domains, privacy-first software, web applications, Android tools, and self-hosted solutions from KWAS Technologies.",
   keywords: [
-    "KWAS Topics",
-    "Key Web App Solutions Topics",
-    "KWAS Solutions Hub",
-    "Web Application Domains",
-    "Android Mobility Solutions",
-    "Privacy & Security Tools",
-    "Self-Hosted Infrastructure",
-    "CLI Toolchains",
+    "KWAS topics",
+    "web application solutions",
+    "Android mobility solutions",
+    "privacy tools",
+    "self-hosted infrastructure",
+    "developer toolchains",
   ],
   alternates: {
-    canonical: "https://kwas.tech/topics",
+    canonical: "https://www.kwas.tech/topics",
   },
   openGraph: {
     title: "Topics & Solutions Hub — KWAS Technologies",
     description:
       "Explore Key Web App Solutions, Android mobility, privacy tools, self-hosted cloud, and CLI toolchains.",
-    url: "https://kwas.tech/topics",
+    url: "https://www.kwas.tech/topics",
     type: "website",
   },
   twitter: {
@@ -42,21 +40,21 @@ export default function TopicsPage() {
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kwas.tech" },
-          { "@type": "ListItem", "position": 2, "name": "Topics & Solutions", "item": "https://kwas.tech/topics" },
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.kwas.tech" },
+          { "@type": "ListItem", "position": 2, "name": "Topics & Solutions", "item": "https://www.kwas.tech/topics" },
         ],
       },
       {
         "@type": "ItemList",
         "name": "KWAS Technologies Engineering Topics",
-        "url": "https://kwas.tech/topics",
+        "url": "https://www.kwas.tech/topics",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Key Web App Solutions", "url": "https://kwas.tech/topics/web-apps" },
-          { "@type": "ListItem", "position": 2, "name": "Android & Mobile Apps", "url": "https://kwas.tech/topics/mobile-apps" },
-          { "@type": "ListItem", "position": 3, "name": "Privacy & Security Tools", "url": "https://kwas.tech/topics/privacy-security" },
-          { "@type": "ListItem", "position": 4, "name": "Self-Hosted Infrastructure", "url": "https://kwas.tech/topics/self-hosted" },
-          { "@type": "ListItem", "position": 5, "name": "Developer Shell & CLI", "url": "https://kwas.tech/topics/terminal-cli" },
-          { "@type": "ListItem", "position": 6, "name": "DevKits & Toolchains", "url": "https://kwas.tech/topics/devkits" },
+          { "@type": "ListItem", "position": 1, "name": "Key Web App Solutions", "url": "https://www.kwas.tech/topics/web-apps" },
+          { "@type": "ListItem", "position": 2, "name": "Android & Mobile Apps", "url": "https://www.kwas.tech/topics/mobile-apps" },
+          { "@type": "ListItem", "position": 3, "name": "Privacy & Security Tools", "url": "https://www.kwas.tech/topics/privacy-security" },
+          { "@type": "ListItem", "position": 4, "name": "Self-Hosted Infrastructure", "url": "https://www.kwas.tech/topics/self-hosted" },
+          { "@type": "ListItem", "position": 5, "name": "Developer Shell & CLI", "url": "https://www.kwas.tech/topics/terminal-cli" },
+          { "@type": "ListItem", "position": 6, "name": "DevKits & Toolchains", "url": "https://www.kwas.tech/topics/devkits" },
         ],
       },
     ],
