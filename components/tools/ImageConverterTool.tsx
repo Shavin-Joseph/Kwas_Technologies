@@ -238,35 +238,35 @@ export function ImageConverterTool() {
                 </div>
 
                 {/* Preview & Side-by-Side Comparison */}
-                <div className="lg:col-span-6 flex flex-col items-center justify-center rounded-2xl border border-line bg-panel2 p-6 text-center">
+                <div className="lg:col-span-6 flex flex-col items-center rounded-2xl border border-line bg-panel2 p-6 text-center">
                   {previewUrl && (
-                    <div className="flex flex-col items-center w-full">
-                      <div className="text-xs font-mono text-muted mb-3">
+                    <div className="flex flex-col items-center w-full gap-3">
+                      <div className="text-xs font-mono text-muted break-words max-w-full">
                         Original: <strong className="text-fg">{origDimensions.width}×{origDimensions.height}px ({formatBytes(file.size)})</strong>
                       </div>
                       
-                      <div className="relative overflow-hidden rounded-xl border border-line bg-panel max-h-56 p-2">
+                      <div className="relative overflow-hidden rounded-xl border border-line bg-panel max-h-48 p-2 w-full flex items-center justify-center">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={convertedUrl || previewUrl}
                           alt="Image preview"
-                          className="max-h-48 w-auto object-contain rounded-lg"
+                          className="max-h-44 max-w-full w-auto object-contain rounded-lg"
                         />
                       </div>
 
                       {convertedSize && (
-                        <div className="mt-4 flex flex-col items-center">
-                          <div className="text-sm font-mono text-emerald-500 font-bold">
+                        <div className="flex flex-col items-center w-full gap-2">
+                          <div className="text-sm font-mono text-emerald-500 font-bold break-words">
                             Processed: {targetWidth}×{targetHeight}px ({formatBytes(convertedSize)})
                           </div>
-                          <div className="mt-1 font-mono text-xs text-amber font-semibold">
+                          <div className="font-mono text-xs text-amber font-semibold break-words">
                             ({Math.round(((file.size - convertedSize) / file.size) * 100)}% File Reduction!)
                           </div>
                           {convertedUrl && (
                             <a
                               href={convertedUrl}
                               download={`pro-kwas.${getFormatExtension()}`}
-                              className="mt-4 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-xs font-bold text-white shadow-md transition-transform hover:scale-[1.03]"
+                              className="mt-2 inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 text-xs font-bold text-white shadow-md transition-transform hover:scale-[1.03]"
                             >
                               <Download size={16} />
                               Download Processed Image (.{getFormatExtension()})

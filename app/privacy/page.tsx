@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { ShieldCheck, Mail, Lock, Eye, FileText, CheckCircle2, CreditCard, Shield, ExternalLink, UserCheck } from "lucide-react";
+import { ShieldCheck, Mail, Lock, Eye, FileText, CheckCircle2, CreditCard, Shield, ExternalLink, UserCheck, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — KWAS Technologies",
@@ -194,22 +195,67 @@ export default function PrivacyPolicyPage() {
             </ul>
           </section>
 
-          {/* Section 6 - Children's Privacy */}
+          {/* Section 6 - Google AdSense & Personalized Advertising */}
+          <section className="rounded-xl border border-line bg-panel/50 p-6">
+            <div className="flex items-center gap-2 font-display text-base font-semibold text-fg mb-3">
+              <Globe size={18} className="text-signal" />
+              <h2>6. Google AdSense &amp; Personalized Advertising</h2>
+            </div>
+            <p>
+              KWAS Technologies uses Google AdSense to display contextual advertisements on our website. Google AdSense may collect and use information about your browsing activity, device information, and interests to serve personalized ads.
+            </p>
+            <ul className="mt-3 flex flex-col gap-2.5 list-disc pl-5">
+              <li>
+                <strong>Data Collected by Google:</strong> Pages you visit, links you click, search history, demographic information, and device information.
+              </li>
+              <li>
+                <strong>Your Ad Choices:</strong> You can manage personalized advertising preferences at{" "}
+                <a
+                  href="https://myaccount.google.com/data-and-privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber hover:underline font-mono inline-flex items-center gap-1"
+                >
+                  Google Data &amp; Privacy Settings <ExternalLink size={12} />
+                </a>.
+              </li>
+              <li>
+                <strong>Opt-Out Options:</strong> Use{" "}
+                <a
+                  href="https://adssettings.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber hover:underline font-mono inline-flex items-center gap-1"
+                >
+                  Google Ad Settings <ExternalLink size={12} />
+                </a>
+                {" "}or ad blockers to limit personalized ads.
+              </li>
+            </ul>
+            <p className="mt-3">
+              For complete details, see our{" "}
+              <Link href="/advertising" className="text-amber hover:underline font-semibold">
+                Advertising Policy
+              </Link>.
+            </p>
+          </section>
+
+          {/* Section 7 - Children's Privacy */}
           <section className="rounded-xl border border-line bg-panel/50 p-6">
             <div className="flex items-center gap-2 font-display text-base font-semibold text-fg mb-3">
               <UserCheck size={18} className="text-amber" />
-              <h2>6. Children&apos;s Privacy (COPPA Compliance)</h2>
+              <h2>7. Children&apos;s Privacy (COPPA Compliance)</h2>
             </div>
             <p>
               Protecting children&apos;s privacy online is paramount. KWAS Technologies does not knowingly collect any personally identifiable information from children under the age of 13. If you believe your child has provided personal information on our platform, please contact us immediately so we can promptly remove such records.
             </p>
           </section>
 
-          {/* Section 7 - GDPR & CCPA */}
+          {/* Section 8 - GDPR & CCPA */}
           <section className="rounded-xl border border-line bg-panel/50 p-6">
             <div className="flex items-center gap-2 font-display text-base font-semibold text-fg mb-3">
               <CheckCircle2 size={18} className="text-emerald-500" />
-              <h2>7. GDPR &amp; CCPA Data Rights</h2>
+              <h2>8. GDPR &amp; CCPA Data Rights</h2>
             </div>
             <p>Users are entitled to full data protection rights under GDPR and CCPA regulations:</p>
             <ul className="mt-3 flex flex-col gap-2 list-disc pl-5">
@@ -220,11 +266,11 @@ export default function PrivacyPolicyPage() {
             </ul>
           </section>
 
-          {/* Section 8 - Contact */}
+          {/* Section 9 - Contact */}
           <section className="rounded-xl border border-line bg-panel/50 p-6">
             <div className="flex items-center gap-2 font-display text-base font-semibold text-fg mb-3">
               <Mail size={18} className="text-amber" />
-              <h2>8. Contact Our Privacy Officer</h2>
+              <h2>9. Contact Our Privacy Officer</h2>
             </div>
             <p>
               If you have any questions, concerns, or requests regarding this Privacy Policy or data protection at KWAS Technologies, contact us at:

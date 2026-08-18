@@ -48,10 +48,15 @@ export function CookieConsent() {
                 <ShieldCheck size={14} className="text-emerald-500" />
               </h4>
               <p className="mt-1 text-xs text-muted leading-relaxed">
-                KWAS Technologies uses cookies to enhance browsing experience, measure analytics, and support personalized advertising (Google AdSense). Read our{" "}
+                We use cookies for analytics, functionality, and personalized ads (Google AdSense). See our{" "}
                 <Link href="/privacy" className="text-amber hover:underline font-semibold">
                   Privacy Policy
-                </Link>.
+                </Link>
+                {" "}and{" "}
+                <Link href="/advertising" className="text-amber hover:underline font-semibold">
+                  Advertising Policy
+                </Link>
+                .
               </p>
             </div>
           </div>

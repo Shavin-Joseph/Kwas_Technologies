@@ -29,6 +29,7 @@ const COLUMNS = [
       { label: "Refund Policy", href: "/refund-policy" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms & Conditions", href: "/terms" },
+      { label: "Advertising Policy", href: "/advertising" },
       { label: "App Licenses", href: "/license" },
       { label: "Google Publisher Policies", href: "/publisher-policies" },
       { label: "Contact (support@kwas.tech)", href: "/contact" },
