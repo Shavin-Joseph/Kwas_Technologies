@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { CTA } from "@/components/CTA";
 import { WordCounterTool } from "@/components/tools/WordCounterTool";
 
 export const metadata: Metadata = {
@@ -52,7 +55,12 @@ export default function WordCounterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <WordCounterTool />
+      <Navbar />
+      <main className="pt-8">
+        <WordCounterTool />
+      </main>
+      <Footer />
+      <Footer />
     </>
   );
 }

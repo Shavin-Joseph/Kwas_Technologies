@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { CTA } from "@/components/CTA";
 import { ImageConverterTool } from "@/components/tools/ImageConverterTool";
 
 export const metadata: Metadata = {
@@ -147,9 +150,9 @@ return (
         __html: JSON.stringify(jsonLd),
       }}
     />
-
+    <Navbar />
     <ImageConverterTool />
-
+    <CTA />
     <section className="mx-auto max-w-5xl px-6 py-16">
       <div className="prose prose-slate max-w-none">
         <h1>Free Image Converter & Compressor</h1>
@@ -258,6 +261,7 @@ return (
         </p>
       </div>
     </section>
+    <Footer />
   </>
 );
 }

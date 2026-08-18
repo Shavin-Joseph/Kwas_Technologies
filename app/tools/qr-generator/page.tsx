@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { CTA } from "@/components/CTA";
 import { QrGeneratorTool } from "@/components/tools/QrGeneratorTool";
 
 export const metadata: Metadata = {
@@ -52,7 +55,12 @@ export default function QRCodeGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <QrGeneratorTool />
+      <Navbar />
+      <main className="pt-8">
+        <QrGeneratorTool />
+      </main>
+      <Footer />
+      <Footer />
     </>
   );
 }

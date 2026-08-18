@@ -43,9 +43,7 @@ export function QrGeneratorTool() {
 
   return (
     <>
-      <Navbar />
-      <main className="pt-8">
-        <section className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
+      <section className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
           {/* Header */}
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3.5 py-1 font-mono text-xs font-semibold text-amber mb-4">
@@ -202,8 +200,6 @@ export function QrGeneratorTool() {
           </div>
         </section>
         <CTA />
-      </main>
-      <Footer />
     </>
   );
 }

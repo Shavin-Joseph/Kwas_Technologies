@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { CTA } from "@/components/CTA";
 import { UnitConverterTool } from "@/components/tools/UnitConverterTool";
 
 export const metadata: Metadata = {
@@ -53,7 +56,12 @@ export default function UnitConverterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <UnitConverterTool />
+      <Navbar />
+      <main className="pt-8">
+        <UnitConverterTool />
+      </main>
+      <Footer />
+      <Footer />
     </>
   );
 }

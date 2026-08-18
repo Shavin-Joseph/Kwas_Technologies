@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 import { Image as ImageIcon, Download, Upload, RefreshCw, Sparkles, ShieldCheck, Zap, Maximize2, Lock, Unlock } from "lucide-react";
 
@@ -105,9 +103,7 @@ export function ImageConverterTool() {
 
   return (
     <>
-      <Navbar />
-      <main className="pt-8">
-        <section className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
+      <section className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
           {/* Header */}
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3.5 py-1 font-mono text-xs font-semibold text-amber mb-4">
@@ -283,9 +279,6 @@ export function ImageConverterTool() {
 
           <canvas ref={canvasRef} className="hidden" />
         </section>
-        <CTA />
-      </main>
-      <Footer />
     </>
   );
 }
